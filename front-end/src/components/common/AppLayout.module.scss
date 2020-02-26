@@ -1,0 +1,43 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  background: #fff;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.home {
+  display: inline-block;
+  padding: 0 10px;
+  margin-right: auto;
+}
+
+.icon-group {
+  padding: 0 20px;
+  .icon-box {
+    display: inline-block;
+    height: 100%;
+    padding: 0 10px;
+    .icon {
+      font-size: 24px;
+    }
+  }
+}
