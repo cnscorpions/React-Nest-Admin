@@ -21,6 +21,8 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "git": "git add . && git commit -m",
+    "postgit": "git pull && git push && git status",
     "formate": "./node_modules/.bin/prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
