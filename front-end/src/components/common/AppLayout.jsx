@@ -3,7 +3,6 @@ import { Layout, Menu, Icon, Tooltip, Dropdown } from "antd";
 import styles from "./AppLayout.module.scss";
 
 const { Header, Sider, Content } = Layout;
-const { SubMenu } = Menu;
 
 const menu = (
   <Menu>
@@ -43,34 +42,7 @@ class AppLayout extends Component {
     return (
       <Layout className={styles.wrapper}>
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-            <Menu.Item key="1">
-              <Icon type="dashboard" />
-              <span>首页</span>
-            </Menu.Item>
-            <SubMenu
-              key="sub1"
-              title={
-                <span>
-                  <Icon type="book" />
-                  <span>图书管理</span>
-                </span>
-              }
-            >
-              <Menu.Item key="sub1-1">
-                <Icon type="menu" />
-                <span>图书列表</span>
-              </Menu.Item>
-              <Menu.Item key="sub1-2">
-                <Icon type="edit" />
-                <span>添加图书</span>
-              </Menu.Item>
-            </SubMenu>
-            <Menu.Item key="2">
-              <Icon type="github" />
-              <span>Githu</span>
-            </Menu.Item>
-          </Menu>
+          {this.props.sidebar}
         </Sider>
         <Layout>
           <Header className={styles.header}>
@@ -104,7 +76,7 @@ class AppLayout extends Component {
               minHeight: 280
             }}
           >
-            {this.props.children}
+            {this.props.content}
           </Content>
         </Layout>
       </Layout>
