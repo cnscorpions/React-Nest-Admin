@@ -28,7 +28,8 @@ class AppLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: false
+      collapsed: false,
+      redirect: null
     };
   }
 
@@ -103,7 +104,7 @@ class AppLayout extends Component {
               minHeight: 280
             }}
           >
-            Content
+            {this.props.children}
           </Content>
         </Layout>
       </Layout>

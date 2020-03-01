@@ -1,7 +1,7 @@
 import React from "react";
 
 function Add(props) {
-  return <div></div>;
+  return <div>Add</div>;
 }
 
 export default Add;
