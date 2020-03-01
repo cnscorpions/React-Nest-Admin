@@ -42,7 +42,11 @@ const sidebar = (
       </Menu.Item>
     </SubMenu>
     <Menu.Item key="2">
-      <a href="https://www.baidu.com" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://github.com/cnscorpions/React-Nest-Admin"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon type="github" />
         <span>Githu</span>
       </a>

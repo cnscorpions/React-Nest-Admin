@@ -27,8 +27,7 @@ class AppLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: false,
-      redirect: null
+      collapsed: false
     };
   }
 
