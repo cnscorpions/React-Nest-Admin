@@ -16,7 +16,7 @@ function Login(props) {
   const { changeAuthStateToAuth } = props;
   let login = ({ username, password }) => {
     // 修改auth状态，并且跳转
-    changeAuthStateToAuth(username, password);
+    changeAuthStateToAuth(username, password, history);
     history.replace(from);
   };
 
@@ -36,9 +36,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeAuthStateToAuth(username, password) {
+    changeAuthStateToAuth(username, password, history) {
       // ajax request via redux thunk
-      const action = actionCreators.login(username, password);
+      const action = actionCreators.login(username, password, history);
       dispatch(action);
     }
   };

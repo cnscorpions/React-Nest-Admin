@@ -11,9 +11,12 @@ const spreadSidebar = () => ({
 });
 
 // authenticate or not
-const authenticate = token => ({
+const authenticate = (token, history) => ({
   type: types.AUTH,
-  payload: token
+  payload: {
+    token: token,
+    history: history
+  }
 });
 
 const unauthenticate = () => ({
@@ -29,10 +32,13 @@ const checkAuth = (username, password) => {
 };
 
 // login - ajax request
-const login = (username, password) => {
+const login = (username, password, history) => {
   return dispatch => {
     return checkAuth(username, password)
-      .then(res => dispatch(authenticate(res.data.token)))
+      .then(res => {
+        dispatch(authenticate(res.data.token, history));
+        history.push("/");
+      })
       .catch(error => dispatch(unauthenticate()));
   };
 };
