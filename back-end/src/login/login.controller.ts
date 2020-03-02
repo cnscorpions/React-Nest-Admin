@@ -10,10 +10,9 @@ export class LoginController {
 
 	@Post()
 	async login(@Query() query) {
-		const res = {
-			code: 0,
-			msg: '登录成功'
+		const data = {
+			token: "abc-d"
 		};
-		return await res;
+		return await data;
 	}
 }
