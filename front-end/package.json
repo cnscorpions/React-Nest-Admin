@@ -56,6 +56,5 @@
     "hooks": {
       "pre-commit": "lint-staged --allow-empty"
     }
-  },
-  "proxy": "http://localhost:13000"
+  }
 }
