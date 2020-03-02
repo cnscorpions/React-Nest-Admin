@@ -2,9 +2,9 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 function PrivateRoute({ children, ...rest }) {
-  const { isAuth, role } = { ...rest };
+  const { isAuth } = { ...rest };
 
-  return role.indexOf("root") > -1 ? (
+  return (
     <Route
       {...rest}
       render={({ location }) =>
@@ -19,18 +19,6 @@ function PrivateRoute({ children, ...rest }) {
           />
         )
       }
-    />
-  ) : (
-    <Route
-      {...rest}
-      render={({ location }) => (
-        <Redirect
-          to={{
-            pathname: "/login",
-            state: { from: location }
-          }}
-        />
-      )}
     />
   );
 }

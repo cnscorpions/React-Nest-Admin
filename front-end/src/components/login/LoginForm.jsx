@@ -8,7 +8,7 @@ class LoginForm extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log("Received values of form: ", values);
-        this.props.submitToParent();
+        this.props.submitToParent(values);
       }
     });
   };
