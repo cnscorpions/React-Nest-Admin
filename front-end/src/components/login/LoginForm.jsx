@@ -8,6 +8,7 @@ class LoginForm extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log("Received values of form: ", values);
+        this.props.submitToParent();
       }
     });
   };
@@ -23,6 +24,7 @@ class LoginForm extends Component {
             <Input
               prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="帐号"
+              autoComplete="on"
             />
           )}
         </Form.Item>
@@ -34,6 +36,7 @@ class LoginForm extends Component {
               prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
               placeholder="密码"
+              autoComplete="on"
             />
           )}
         </Form.Item>
