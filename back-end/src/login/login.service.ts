@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class LoginService {
 
 	validateLogin(username: string, password: string) {
-		if (username === "admin") && (password === "123") {
+		if (username === "admin" && password === "123") {
 			return true;
 		}
 	}
