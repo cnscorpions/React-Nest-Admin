@@ -1,6 +1,26 @@
-import { Route } from "react-router-dom";
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
 
-// a wrapper, HOC
 function PrivateRoute({ children, ...rest }) {
-  return <Route></Route>;
+  const { isAuth } = { ...rest };
+
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        isAuth ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
+  );
 }
+
+export default PrivateRoute;

@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { connect } from "react-redux";
+import PrivateRoute from "./auth";
 import { Menu, Icon } from "antd";
 import AppLayout from "../components/common/AppLayout";
 
@@ -59,7 +61,6 @@ const Routes = [
   {
     path: "/",
     component: Home,
-    isExact: true,
     isAuthenticated: true, // authed
     role: ["root", "user"] // root or user
   },
@@ -77,7 +78,9 @@ const Routes = [
   }
 ];
 
-export default function AppRouter() {
+function AppRouter(props) {
+  const { isAuth } = props;
+
   return (
     <Router>
       <Switch>
@@ -85,9 +88,9 @@ export default function AppRouter() {
           <Login />
         </Route>
         {Routes.map((route, index) => (
-          <Route key={index} exact={route.isExact} path={route.path}>
+          <PrivateRoute key={index} exact path={route.path} isAuth={isAuth}>
             <AppLayout content={<route.component />} sidebar={sidebar} />
-          </Route>
+          </PrivateRoute>
         ))}
         <Route path="*">
           <NotFound />
@@ -96,3 +99,9 @@ export default function AppRouter() {
     </Router>
   );
 }
+
+const mapStateToProps = state => ({
+  isAuth: state.auth.isAuth
+});
+
+export default connect(mapStateToProps, null)(AppRouter);

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
+import * as actionCreators from "../../store/actionCreators/index";
 import LoginForm from "../../components/login/LoginForm";
 
 import styles from "./login.module.scss";
@@ -12,10 +13,11 @@ function Login(props) {
   // 路径
   let { from } = location.state || { from: { pathname: "/" } };
 
+  const { changeAuthStateToAuth } = props;
   let login = () => {
-    if (props.isAuth) {
-      history.replace(from);
-    }
+    // 修改auth状态，并且跳转
+    changeAuthStateToAuth();
+    history.replace(from);
   };
 
   return (
@@ -32,4 +34,13 @@ const mapStateToProps = state => ({
   isAuth: state.auth.isAuth
 });
 
-export default connect(mapStateToProps, null)(Login);
+const mapDispatchToProps = dispatch => {
+  return {
+    changeAuthStateToAuth() {
+      const action = actionCreators.authenticate();
+      dispatch(action);
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
