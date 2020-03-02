@@ -88,7 +88,13 @@ function AppRouter(props) {
           <Login />
         </Route>
         {Routes.map((route, index) => (
-          <PrivateRoute key={index} exact path={route.path} isAuth={isAuth}>
+          <PrivateRoute
+            key={index}
+            exact
+            path={route.path}
+            isAuth={isAuth}
+            role={route.role}
+          >
             <AppLayout content={<route.component />} sidebar={sidebar} />
           </PrivateRoute>
         ))}
