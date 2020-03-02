@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actionCreators from "../../store/actionCreators/index";
 import { Layout, Menu, Icon, Tooltip, Dropdown } from "antd";
 import styles from "./AppLayout.module.scss";
 
@@ -24,31 +26,20 @@ const menu = (
 );
 
 class AppLayout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: false
-    };
-  }
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
-
   render() {
+    const { isCollapsed, toggle } = this.props;
+
     return (
       <Layout className={styles.wrapper}>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Sider trigger={null} collapsible collapsed={isCollapsed}>
           {this.props.sidebar}
         </Sider>
         <Layout>
           <Header className={styles.header}>
             <Icon
               className={styles["trigger"]}
-              type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
-              onClick={this.toggle}
+              type={isCollapsed ? "menu-unfold" : "menu-fold"}
+              onClick={() => toggle(isCollapsed)}
             />
             <span className={styles.home}>首页</span>
             <div className={styles["icon-group"]}>
@@ -83,4 +74,20 @@ class AppLayout extends Component {
   }
 }
 
-export default AppLayout;
+const mapStateToProps = state => ({
+  isCollapsed: state.layout.isCollapsed
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    toggle(isCollapsed) {
+      const action = isCollapsed
+        ? actionCreators.spreadSidebar()
+        : actionCreators.collapseSidebar();
+      console.log(action);
+      dispatch(action);
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppLayout);
