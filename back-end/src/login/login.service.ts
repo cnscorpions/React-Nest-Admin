@@ -1,6 +1,8 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Model } from "mongoose";
 import { InjectModel } from "@nestjs/mongoose";
+import * as jwt from "jsonwebtoken";
+import { PRIVATE_KEY, JWT_EXPIRED } from "../utils/constant";
 import { User } from "./interfaces/user.interface";
 
 @Injectable()
@@ -11,15 +13,14 @@ export class LoginService {
 	}
 
 	// 验证
-	async validateLogin(args) {
-		const { username, password } = args;
-		const dataFromDB = await this.find(username);
-		console.log(dataFromDB);
-		if (username === dataFromDB.username && password === dataFromDB.password) {
-			const data = {
-				token: "abc-d"
+	async validateLogin(Body) {
+		const { username, password } = Body;
+		const user = await this.find(username);
+		if ( user && user.password === password) {
+			const token = this.createJWT(username);
+			return {
+				token: token
 			};
-			return data;
 		} else {
 			throw new HttpException({
 				status: HttpStatus.FORBIDDEN,
@@ -28,6 +29,7 @@ export class LoginService {
 		}
 	}
 
+	// query in mongodb
 	private async find(username: string): Promise<User>{
 		return this.userModel.findOne({ 
 			username: username 
@@ -37,6 +39,16 @@ export class LoginService {
 			password: 1,
 			_id: 0
 		}).exec();
+	}
+
+	// generate jwt
+	private createJWT(username) {
+		const token = jwt.sign(
+			{ username },
+			PRIVATE_KEY,
+			{ expiresIn: JWT_EXPIRED }
+		);
+		return token;
 	}
 
 }
