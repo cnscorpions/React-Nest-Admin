@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Query } from '@nestjs/common';
+import { Controller, Post, Get, Body } from '@nestjs/common';
 import { LoginService } from "./login.service";
 
 @Controller('login')
@@ -9,10 +9,8 @@ export class LoginController {
 	}
 
 	@Post()
-	async login(@Query() query) {
-		const data = {
-			token: "abc-d"
-		};
+	async login(@Body() Body) {
+		const data = this.loginService.validateLogin(Body);
 		return await data;
 	}
 }
