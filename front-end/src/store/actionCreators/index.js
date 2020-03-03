@@ -1,5 +1,6 @@
 import * as types from "../actionTypes/index";
 import axios from "axios";
+import msgService from "../../components/message/message";
 
 // collaspe sidebar or not
 const collapseSidebar = () => ({
@@ -36,10 +37,14 @@ const login = (username, password, history) => {
   return dispatch => {
     return checkAuth(username, password)
       .then(res => {
+        msgService("success", "登录成功！");
         dispatch(authenticate(res.data.token, history));
         history.push("/");
       })
-      .catch(error => dispatch(unauthenticate()));
+      .catch(error => {
+        msgService("error", "输入帐号密码错误");
+        console.error(error);
+      });
   };
 };
 
