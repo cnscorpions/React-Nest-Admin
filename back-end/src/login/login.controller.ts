@@ -10,7 +10,7 @@ export class LoginController {
 
 	@Post()
 	async login(@Body() Body) {
-		const data = this.loginService.validateLogin(Body);
-		return await data;
+		const data = await this.loginService.validateLogin(Body);
+		return data;
 	}
 }

@@ -1,11 +1,21 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Model } from "mongoose";
+import { InjectModel } from "@nestjs/mongoose";
+import { User } from "./interfaces/user.interface";
 
 @Injectable()
 export class LoginService {
 
-	validateLogin(args) {
+	constructor(@InjectModel("User") private readonly userModel: Model<User>) {
+
+	}
+
+	// 验证
+	async validateLogin(args) {
 		const { username, password } = args;
-		if (username === "admin" && password === "123") {
+		const dataFromDB = await this.find(username);
+		console.log(dataFromDB);
+		if (username === dataFromDB.username && password === dataFromDB.password) {
 			const data = {
 				token: "abc-d"
 			};
@@ -17,4 +27,16 @@ export class LoginService {
 			}, 403);
 		}
 	}
+
+	private async find(username: string): Promise<User>{
+		return this.userModel.findOne({ 
+			username: username 
+		}, 
+		{ 
+			username : 1,
+			password: 1,
+			_id: 0
+		}).exec();
+	}
+
 }
