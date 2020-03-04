@@ -1,5 +1,4 @@
 import axios from "axios";
-import { getToken } from "./token";
 
 // create a axios instance
 const request = axios.create({
