@@ -18,6 +18,6 @@ export class AuthService {
 	// verify jwt
 	verifyJWT(token) {
 		const decoded = jwt.verify(token, PRIVATE_KEY);
-		console.log(decoded);
+		return decoded;
 	}
 }
