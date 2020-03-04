@@ -8,4 +8,10 @@ const checkAuth = (username, password) => {
   });
 };
 
+// const getProfile = (userId) => {
+// 	return axios.post("http://localhost:13000/profile", {
+// 		userId: userId
+// 	});
+// };
+
 export { checkAuth };
