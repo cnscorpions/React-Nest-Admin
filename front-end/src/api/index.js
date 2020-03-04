@@ -1,4 +1,5 @@
 import axios from "axios";
+import service from "../utils/request";
 
 // ajax req for login to get token
 const checkAuth = (username, password) => {
@@ -8,10 +9,8 @@ const checkAuth = (username, password) => {
   });
 };
 
-// const getProfile = (userId) => {
-// 	return axios.post("http://localhost:13000/profile", {
-// 		userId: userId
-// 	});
-// };
+const getProfile = () => {
+  return service.get("http://localhost:13000/profile");
+};
 
-export { checkAuth };
+export { checkAuth, getProfile };

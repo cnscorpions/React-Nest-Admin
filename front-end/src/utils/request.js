@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from "./storage";
 
 // create a axios instance
 const service = axios.create({
@@ -8,10 +9,8 @@ const service = axios.create({
 
 service.interceptors.request.use(config => {
   // if token exists, then added to http header
-  // if (token) {
-  // 	config.headers["Authorization"] = getToken();
-  // }
-  // return config;
+  if (getToken()) config.headers["Authorization"] = getToken();
+  return config;
 });
 
 export default service;
