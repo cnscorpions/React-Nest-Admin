@@ -1,5 +1,5 @@
 import * as types from "../actionTypes/index";
-import axios from "axios";
+import * as api from "../../api/index";
 import msgService from "../../components/message/message";
 
 // collaspe sidebar or not
@@ -24,18 +24,11 @@ const unauthenticate = () => ({
   type: types.AUTH_NOT
 });
 
-// a ajax req for auth check
-const checkAuth = (username, password) => {
-  return axios.post("http://localhost:13000/login", {
-    username: username,
-    password: password
-  });
-};
-
 // login - ajax request
 const login = (username, password, history) => {
   return dispatch => {
-    return checkAuth(username, password)
+    return api
+      .checkAuth(username, password)
       .then(res => {
         msgService("success", "登录成功！");
         dispatch(authenticate(res.data.token, history));
