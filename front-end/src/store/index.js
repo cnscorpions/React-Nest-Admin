@@ -7,7 +7,8 @@ import ReduxThunk from "redux-thunk";
 // persist state in redux
 const persistConfig = {
   key: "root",
-  storage
+  storage,
+  whitelist: ["auth"]
 };
 
 const persistedReducer = persistReducer(persistConfig, RootReducer);
