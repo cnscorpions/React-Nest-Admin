@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from "@nestjs/mongoose";
 import { LoginController } from './login.controller';
 import { LoginService } from './login.service';
+import { AuthService } from "../auth/auth.service";
 import { UserSchema } from "./schemas/user.schema";
 
 @Module({
@@ -9,6 +10,6 @@ import { UserSchema } from "./schemas/user.schema";
 		MongooseModule.forFeature([{ name: "User", schema: UserSchema }])
 	],
   controllers: [LoginController],
-  providers: [LoginService]
+  providers: [LoginService, AuthService]
 })
 export class LoginModule {}

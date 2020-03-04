@@ -1,23 +1,23 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Model } from "mongoose";
 import { InjectModel } from "@nestjs/mongoose";
-import * as jwt from "jsonwebtoken";
-import { PRIVATE_KEY, JWT_EXPIRED } from "../utils/constant";
 import { User } from "./interfaces/user.interface";
+import { AuthService } from "../auth/auth.service";
 
 @Injectable()
 export class LoginService {
 
-	constructor(@InjectModel("User") private readonly userModel: Model<User>) {
-
+	constructor(
+		@InjectModel("User") private readonly userModel: Model<User>,
+		private readonly authService: AuthService
+		) {
 	}
 
-	// 验证
 	async validateLogin(Body) {
 		const { username, password } = Body;
 		const user = await this.find(username);
 		if ( user && user.password === password) {
-			const token = this.createJWT(username);
+			const token = this.authService.createJWT(username);
 			return {
 				token: token
 			};
@@ -39,16 +39,6 @@ export class LoginService {
 			password: 1,
 			_id: 0
 		}).exec();
-	}
-
-	// generate jwt
-	private createJWT(username) {
-		const token = jwt.sign(
-			{ username },
-			PRIVATE_KEY,
-			{ expiresIn: JWT_EXPIRED }
-		);
-		return token;
 	}
 
 }
