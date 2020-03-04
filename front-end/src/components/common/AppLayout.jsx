@@ -19,8 +19,8 @@ const menu = (signOut, history) => (
         源码
       </a>
     </Menu.Item>
-    <Menu.Item>
-      <span onClick={() => signOut(history)}>退出</span>
+    <Menu.Item onClick={() => signOut(history)}>
+      <span>退出</span>
     </Menu.Item>
   </Menu>
 );
