@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoginModule } from './login/login.module';
 import { AuthService } from './auth/auth.service';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { AuthService } from './auth/auth.service';
   	MongooseModule.forRoot('mongodb://localhost:27017/bookAdmindb', {
   		useNewUrlParser: true,
   		useUnifiedTopology: true 
-  	})
+  	}),
+  	ProfileModule
   ],
   controllers: [AppController],
   providers: [AppService, AuthService],
