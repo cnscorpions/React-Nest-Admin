@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 40px;
+  .form-item {
+    flex: 50%;
+  }
+  .form-item-submit {
+    flex: 50%;
+  }
+}
