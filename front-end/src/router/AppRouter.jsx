@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import PrivateRoute from "./route-guard";
+import PrivateRoute from "./RouteGuard";
 import { Menu, Icon } from "antd";
 import AppLayout from "../components/common/AppLayout";
 
 import Home from "../pages/Home/Home";
-import Login from "../pages/login/Login";
+import Login from "../pages/Login/Login";
 import List from "../pages/List";
 import NotFound from "../pages/NotFound";
-import Add from "../pages/Add";
+import Add from "../pages/Add/Add";
 
 const { SubMenu } = Menu;
 

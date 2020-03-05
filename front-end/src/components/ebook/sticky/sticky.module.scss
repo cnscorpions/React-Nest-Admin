@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    90deg,
+    #20b6f9,
+    #20b6f9 0,
+    #2178f1 100%,
+    #2178f1 0
+  );
+}
+
+.btn-group {
+  padding-right: 20px;
+}
+
+.btn-help {
+  margin-right: 10px;
+}
+
+.btn-add {
+  background-color: #42d885;
+  color: #fff;
+}
