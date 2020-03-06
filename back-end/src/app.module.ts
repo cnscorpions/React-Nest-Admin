@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { LoginModule } from './login/login.module';
 import { AuthService } from './auth/auth.service';
 import { ProfileModule } from './profile/profile.module';
+import { EbookModule } from './ebook/ebook.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { ProfileModule } from './profile/profile.module';
   		useNewUrlParser: true,
   		useUnifiedTopology: true 
   	}),
-  	ProfileModule
+  	ProfileModule,
+  	EbookModule
   ],
   controllers: [AppController],
   providers: [AppService, AuthService],
