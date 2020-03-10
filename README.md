@@ -6,8 +6,8 @@
   <a href="https://github.com/facebook/react">
     <img src="https://img.shields.io/badge/react-16.12.0-brightgreen.svg" alt="react">
   </a>
-    <a href="https://github.com/nestjs/nest">
-    <img src="https://img.shields.io/badge/nest-6.10.14-red.svg" alt="react">
+  <a href="https://github.com/nestjs/nest">
+    <img src="https://img.shields.io/badge/nest-6.10.14-red.svg" alt="nest">
   </a>
 </p>
 
