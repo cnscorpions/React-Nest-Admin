@@ -1,6 +1,17 @@
 language: node_js
 node_js:
 - "13"
-branchs:
+branches:
   only:
   - master
+install:
+- npm install
+script:
+- npm run build
+env:
+  global:
+    secure:
+addons:
+  ssh_known_hosts:
+  - 120.55.47.104
+  
