@@ -5,47 +5,63 @@ import * as styles from "./ebookForm.module.scss";
 const items = [
   {
     label: "书名",
-    name: "bookName"
+    name: "title",
+    value: ""
   },
   {
     label: "作者",
-    name: "author"
+    name: "author",
+    value: ""
   },
   {
     label: "出版社",
-    name: "publisher"
+    name: "publisher",
+    value: ""
   },
   {
     label: "语言",
-    name: "language"
+    name: "language",
+    value: ""
   },
   {
     label: "根文件",
-    name: "rootFile"
+    name: "rootFile",
+    value: ""
   },
   {
     label: "文件路径",
-    name: "filePath"
+    name: "filePath",
+    value: ""
   },
   {
     label: "解压路径",
-    name: "unzipPath"
+    name: "unzipPath",
+    value: ""
   },
   {
     label: "封面路径",
-    name: "coverPath"
+    name: "coverPath",
+    value: ""
   },
   {
     label: "文件名称",
-    name: "fileName"
+    name: "fileName",
+    value: ""
+  },
+  {
+    label: "文件原始名称",
+    name: "originalName",
+    value: ""
   },
   {
     label: "封面",
-    name: "cover"
+    name: "cover",
+    value: ""
   },
   {
     label: "目录",
-    name: "catagory"
+    name: "contents",
+    value: []
   }
 ];
 
@@ -79,7 +95,7 @@ const getFormItem = items => {
       ]}
       className={styles["form-item"]}
     >
-      <Input />
+      <Input value={item.value} />
     </Form.Item>
   ));
   return els;
