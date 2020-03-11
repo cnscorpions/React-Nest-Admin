@@ -18,4 +18,10 @@ const getProfile = () => {
   return service.get(`${host}/profile`);
 };
 
-export { checkAuth, getProfile };
+const uploadEbook = file => {
+  return service.post(`${host}/ebook/upload`, {
+    file
+  });
+};
+
+export { checkAuth, getProfile, uploadEbook };

@@ -1,23 +1,37 @@
 import React from "react";
+import { uploadEbook } from "../../../api/index";
 import { Upload, message, Icon } from "antd";
 
 const { Dragger } = Upload;
 
-const props = {
-  name: "file",
-  multiple: false,
-  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (status === "done") {
+const host =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:23000"
+    : "http://120.55.47.104:12833";
+
+const customUpload = async info => {
+  const { file } = info;
+  const base64 = await new Promise(resolve => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+  });
+  // console.log(file);
+  uploadEbook(base64)
+    .then(res => {
+      console.log(res);
       message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === "error") {
+    })
+    .catch(error => {
+      console.log(error);
       message.error(`${info.file.name} file upload failed.`);
-    }
-  }
+    });
+};
+
+const props = {
+  customRequest: customUpload
 };
 
 function UploadEbook() {
