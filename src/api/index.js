@@ -1,5 +1,5 @@
 import axios from "axios";
-import service from "../utils/request";
+import { service, uploadService } from "../utils/request";
 
 const host =
   process.env.NODE_ENV !== "production"
@@ -18,10 +18,8 @@ const getProfile = () => {
   return service.get(`${host}/profile`);
 };
 
-const uploadEbook = file => {
-  return service.post(`${host}/ebook/upload`, {
-    file
-  });
+const uploadEbook = data => {
+  return uploadService.post(`${host}/ebook/upload`, data);
 };
 
 export { checkAuth, getProfile, uploadEbook };

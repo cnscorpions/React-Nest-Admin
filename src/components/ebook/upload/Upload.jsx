@@ -11,15 +11,12 @@ const host =
 
 const customUpload = async info => {
   const { file } = info;
-  const base64 = await new Promise(resolve => {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () => {
-      resolve(fileReader.result);
-    };
-  });
-  // console.log(file);
-  uploadEbook(base64)
+
+  // create formData instance
+  const bodyFormData = new FormData();
+  bodyFormData.append("file", file);
+
+  uploadEbook(bodyFormData)
     .then(res => {
       console.log(res);
       message.success(`${info.file.name} file uploaded successfully.`);
