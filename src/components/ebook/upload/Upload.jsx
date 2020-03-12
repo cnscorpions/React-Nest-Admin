@@ -4,11 +4,6 @@ import { Upload, message, Icon } from "antd";
 
 const { Dragger } = Upload;
 
-const host =
-  process.env.NODE_ENV !== "production"
-    ? "http://localhost:23000"
-    : "http://120.55.47.104:12833";
-
 const customUpload = async info => {
   const { file } = info;
 
