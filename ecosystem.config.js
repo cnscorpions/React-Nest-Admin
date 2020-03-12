@@ -23,7 +23,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : "https://github.com/cnscorpions/React-Nest-Admin.git",
       path : "/home/gavin/react-nest-admin/front-end",
-      "post-deploy": "echo 'update success'"
+      "post-deploy": "git status"
     }
   }
 };
