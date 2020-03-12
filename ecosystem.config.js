@@ -21,7 +21,7 @@ module.exports = {
       user : "gavin",
       host : "120.55.47.104",
       ref  : 'origin/master',
-      repo : "git@github.com:cnscorpions/React-Nest-Admin.git",
+      repo : "https://github.com/cnscorpions/React-Nest-Admin.git",
       path : "/home/gavin/react-nest-admin/front-end"
     }
   }
