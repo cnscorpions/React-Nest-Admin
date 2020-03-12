@@ -31,7 +31,7 @@ const login = (username, password, history) => {
       .checkAuth(username, password)
       .then(res => {
         msgService("success", "登录成功！");
-        dispatch(authenticate(res.data.token, history));
+        dispatch(authenticate(res.data.data.token, history)); // TODO 要封装axios返回结果
         history.push("/");
       })
       .catch(error => {
