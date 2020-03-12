@@ -4,7 +4,7 @@ import { getToken } from "./storage";
 // create a axios instance
 const service = axios.create({
   baseURL: "http://localhost:3000",
-  timeout: 5000
+  timeout: 10000
 });
 
 service.interceptors.request.use(config => {
@@ -16,7 +16,7 @@ service.interceptors.request.use(config => {
 // upload via form
 const uploadService = axios.create({
   baseURL: "http://localhost:3000",
-  timeout: 5000
+  timeout: 10000
 });
 
 // insert token and set up formData content type
