@@ -22,7 +22,8 @@ module.exports = {
       host : "120.55.47.104",
       ref  : 'origin/master',
       repo : "https://github.com/cnscorpions/React-Nest-Admin.git",
-      path : "/home/gavin/react-nest-admin/front-end"
+      path : "/home/gavin/react-nest-admin/front-end",
+      "post-deploy": "echo 'update success'"
     }
   }
 };
