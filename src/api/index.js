@@ -4,7 +4,7 @@ import { service, uploadService } from "../utils/request";
 const host =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:23000"
-    : "http://120.55.47.104:12833";
+    : "https://react-nestjs-admin.xyz";
 
 // ajax req for login to get token
 const checkAuth = (username, password) => {
