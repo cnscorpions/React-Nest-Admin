@@ -42,12 +42,12 @@ const login = (username, password, history) => {
 };
 
 // upload ebook
-const addEbook = () => ({
-  type: types.ADD_EBOOK,
-  payload: {
-    isEdit: false,
-    form: null
-  }
-});
+// const addEbook = () => ({
+//   type: types.ADD_EBOOK,
+//   payload: {
+//     isEdit: false,
+//     form: null
+//   }
+// });
 
 export { collapseSidebar, spreadSidebar, authenticate, unauthenticate, login };

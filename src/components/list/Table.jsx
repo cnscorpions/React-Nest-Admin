@@ -1,33 +1,44 @@
-import React from "react";
-import { Table } from "antd";
+import React, { Component } from "react";
+import { Table, Icon } from "antd";
 
 const { Column } = Table;
 
-const EbookTable = props => {
-  const { data } = props;
-  // 添加key
-  // const indexedData = data.map(item => {
-  //   item["key"] = item["_id"];
-  // });
+export class EbookTable extends Component {
+  constructor(props) {
+    super(props);
+    this.deleteHanler = this.deleteHanler.bind(this);
+  }
 
-  return (
-    <Table dataSource={data}>
-      <Column title="书名" dataIndex="originalName" key="originalName" />
-      <Column title="作者" dataIndex="author" key="author" />
-      <Column title="书名" dataIndex="publisher" key="publisher" />
-      <Column title="语言" dataIndex="language" key="language" />
-      <Column
-        title="操作"
-        key="action"
-        render={(text, record) => (
-          <span>
-            <a style={{ marginRight: 16 }}>修改</a>
-            <a>删除</a>
-          </span>
-        )}
-      />
-    </Table>
-  );
-};
+  deleteHanler(id) {
+    const { deleteItem } = this.props;
+    deleteItem(id);
+  }
+
+  render() {
+    const { data } = this.props;
+
+    return (
+      <Table dataSource={data} rowKey={record => record._id}>
+        <Column title="书名" dataIndex="originalName" key="originalName" />
+        <Column title="作者" dataIndex="author" key="author" />
+        <Column title="书名" dataIndex="publisher" key="publisher" />
+        <Column title="语言" dataIndex="language" key="language" />
+        <Column
+          title="操作"
+          key="action"
+          render={(text, record) => (
+            <span>
+              <Icon type="edit" style={{ marginRight: 16 }} />
+              <Icon
+                type="delete"
+                onClick={() => this.deleteHanler(record["_id"])}
+              />
+            </span>
+          )}
+        />
+      </Table>
+    );
+  }
+}
 
 export default EbookTable;
