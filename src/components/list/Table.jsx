@@ -9,9 +9,9 @@ export class EbookTable extends Component {
     this.deleteHanler = this.deleteHanler.bind(this);
   }
 
-  deleteHanler(id) {
+  deleteHanler(id, filePath) {
     const { deleteItem } = this.props;
-    deleteItem(id);
+    deleteItem(id, filePath);
   }
 
   render() {
@@ -31,7 +31,9 @@ export class EbookTable extends Component {
               <Icon type="edit" style={{ marginRight: 16 }} />
               <Icon
                 type="delete"
-                onClick={() => this.deleteHanler(record["_id"])}
+                onClick={() =>
+                  this.deleteHanler(record["_id"], record["filePath"])
+                }
               />
             </span>
           )}

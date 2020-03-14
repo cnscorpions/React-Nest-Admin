@@ -29,8 +29,8 @@ class List extends Component {
       });
   };
 
-  deleteItem(id) {
-    deleteEbook({ id: id })
+  deleteItem(id, filePath) {
+    deleteEbook({ id: id, filePath: filePath })
       .then(res => {
         this.getList();
       })
