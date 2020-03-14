@@ -22,4 +22,8 @@ const uploadEbook = data => {
   return uploadService.post(`${host}/ebook/upload`, data);
 };
 
-export { checkAuth, getProfile, uploadEbook };
+const getEbookList = () => {
+  return service.get(`${host}/ebook/list`);
+};
+
+export { checkAuth, getProfile, uploadEbook, getEbookList };

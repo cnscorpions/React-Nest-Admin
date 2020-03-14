@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PrivateRoute from "./RouteGuard";
 import { Menu, Icon } from "antd";
-import AppLayout from "../components/common/AppLayout";
+import AppLayout from "../components/layout/AppLayout";
 
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
-import List from "../pages/List";
+import List from "../pages/List/List";
 import NotFound from "../pages/NotFound";
 import Add from "../pages/Add/Add";
 
