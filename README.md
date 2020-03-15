@@ -21,8 +21,8 @@
 2. 这是一个Admin解决方案，始于一个图书管理系统，涉及用户登录注册，用户鉴权，权限控制等等;
 3. 这是一套Web项目的完整学习资料，涉及到相关知识会提供Roadmap和tips
 
-- [在线版本](https://react-nestjs-admin.xyz)
-- [系列教程]()
+- [在线版本](https://react-nestjs-admin.xyz) 账号密码：`admin 123` or `test 123`
+- 系列教程
 
 ## 环境
 - node 13 + （建议使用nvm进行node版本管理）
