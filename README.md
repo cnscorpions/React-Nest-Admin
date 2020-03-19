@@ -39,13 +39,13 @@
 
 ## 效果图
 - 登录页
-![登录页面](https://react-nest-admin.oss-cn-hangzhou.aliyuncs.com/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.png)
+![登录页面](https://github.com/cnscorpions/React-Nest-Admin/blob/master/doc/images/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.png)
 
 - 首页
-![首页](https://react-nest-admin.oss-cn-hangzhou.aliyuncs.com/%E9%A6%96%E9%A1%B5.png)
+![首页](https://github.com/cnscorpions/React-Nest-Admin/blob/master/doc/images/%E9%A6%96%E9%A1%B5.png)
 
 - 文件上传
-![文件上传](https://react-nest-admin.oss-cn-hangzhou.aliyuncs.com/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png)
+![文件上传](https://github.com/cnscorpions/React-Nest-Admin/blob/master/doc/images/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png)
 
 ## 功能及技术实现
 - 登录 & 注册
