@@ -23,7 +23,7 @@ function Login(props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles["login-box"]}>
-        <h3 className={styles.title}>图书管理后台</h3>
+        <h3 className={styles.title}>通用管理后台</h3>
         <LoginForm submitToParent={login} />
       </div>
     </div>
