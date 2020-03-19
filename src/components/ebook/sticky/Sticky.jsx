@@ -7,7 +7,7 @@ function Sticky(props) {
     <div className={styles.wrapper + " " + styles.sticky}>
       <div className={styles["btn-group"]}>
         <Button className={styles["btn-help"]}>显示帮助</Button>
-        <Button className={styles["btn-add"]}>新增电子书</Button>
+        <Button className={styles["btn-add"]}>新增文件</Button>
       </div>
     </div>
   );

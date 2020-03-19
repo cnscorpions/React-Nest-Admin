@@ -4,64 +4,14 @@ import * as styles from "./ebookForm.module.scss";
 
 const items = [
   {
-    label: "书名",
-    name: "title",
-    value: ""
-  },
-  {
-    label: "作者",
-    name: "author",
-    value: ""
-  },
-  {
-    label: "出版社",
-    name: "publisher",
-    value: ""
-  },
-  {
-    label: "语言",
-    name: "language",
-    value: ""
-  },
-  {
-    label: "根文件",
-    name: "rootFile",
-    value: ""
-  },
-  {
-    label: "文件路径",
-    name: "filePath",
-    value: ""
-  },
-  {
-    label: "解压路径",
-    name: "unzipPath",
-    value: ""
-  },
-  {
-    label: "封面路径",
-    name: "coverPath",
-    value: ""
-  },
-  {
     label: "文件名称",
     name: "fileName",
     value: ""
   },
   {
-    label: "文件原始名称",
+    label: "原始文件名",
     name: "originalName",
     value: ""
-  },
-  {
-    label: "封面",
-    name: "cover",
-    value: ""
-  },
-  {
-    label: "目录",
-    name: "contents",
-    value: []
   }
 ];
 
@@ -102,6 +52,11 @@ const getFormItem = items => {
 };
 
 function EbookForm(props) {
+  // TODO: 之后处理，先隐藏掉
+  if (true) {
+    return null;
+  }
+
   return (
     <Form {...layout} name="basic" className={styles.form}>
       {getFormItem(items)}

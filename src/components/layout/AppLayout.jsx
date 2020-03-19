@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actionCreators from "../../store/actionCreators/index";
 import { useHistory } from "react-router-dom";
 
-import { Layout, Menu, Icon, Tooltip, Dropdown } from "antd";
+import { Layout, Menu, Icon, Dropdown } from "antd";
 import styles from "./AppLayout.module.scss";
 
 const { Header, Sider, Content } = Layout;
@@ -45,14 +45,6 @@ const AppLayout = props => {
           />
           <span className={styles.home}>首页</span>
           <div className={styles["icon-group"]}>
-            <span className={styles["icon-box"]}>
-              <Icon className={styles.icon} type="fullscreen" />
-            </span>
-            <span className={styles["icon-box"]}>
-              <Tooltip placement="bottom" title="字体大小">
-                <Icon className={styles.icon} type="font-size" />
-              </Tooltip>
-            </span>
             <span className={styles["icon-box"]}>
               <Dropdown
                 overlay={() => menu(signOut, history)}

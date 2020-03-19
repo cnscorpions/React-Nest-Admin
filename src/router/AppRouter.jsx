@@ -25,21 +25,21 @@ const sidebar = (
       key="sub1"
       title={
         <span>
-          <Icon type="book" />
-          <span>图书管理</span>
+          <Icon type="file" />
+          <span>文件管理</span>
         </span>
       }
     >
       <Menu.Item key="sub1-1">
         <Link to="/list">
-          <Icon type="menu" />
-          <span>图书列表</span>
+          <Icon type="ordered-list" />
+          <span>文件列表</span>
         </Link>
       </Menu.Item>
       <Menu.Item key="sub1-2">
         <Link to="/add">
-          <Icon type="edit" />
-          <span>添加图书</span>
+          <Icon type="upload" />
+          <span>文件上传</span>
         </Link>
       </Menu.Item>
     </SubMenu>

@@ -1,5 +1,6 @@
 import React from "react";
-import { uploadEbook } from "../../../api/index";
+import { getUser } from "../../../utils/storage";
+import { uploadFile } from "../../../api/index";
 import { Upload, message, Icon } from "antd";
 
 const { Dragger } = Upload;
@@ -10,8 +11,10 @@ const customUpload = async info => {
   // create formData instance
   const bodyFormData = new FormData();
   bodyFormData.append("file", file);
+  const user = getUser();
+  bodyFormData.append("user", user);
 
-  uploadEbook(bodyFormData)
+  uploadFile(bodyFormData)
     .then(res => {
       console.log(res);
       message.success(`${info.file.name} file uploaded successfully.`);

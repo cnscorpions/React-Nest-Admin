@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import EbookTable from "../../components/list/Table";
-import { getEbookList, deleteEbook } from "../../api/index";
-import msgService from "../../components/message/message";
+import { getFileList, deleteFile } from "../../api/index";
+// import msgService from "../../components/message/message";
 
 class List extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class List extends Component {
   }
 
   getList = () => {
-    getEbookList()
+    getFileList()
       .then(res => {
         const { data } = res.data;
         this.setState(state => ({
@@ -30,7 +30,7 @@ class List extends Component {
   };
 
   deleteItem(id, filePath) {
-    deleteEbook({ id: id, filePath: filePath })
+    deleteFile({ id: id, filePath: filePath })
       .then(res => {
         this.getList();
       })

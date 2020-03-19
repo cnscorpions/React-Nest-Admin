@@ -18,16 +18,16 @@ const getProfile = () => {
   return service.get(`${host}/profile`);
 };
 
-const uploadEbook = data => {
-  return uploadService.post(`${host}/ebook/upload`, data);
+const uploadFile = data => {
+  return uploadService.post(`${host}/file/upload`, data);
 };
 
-const getEbookList = () => {
-  return service.get(`${host}/ebook/list`);
+const getFileList = () => {
+  return service.get(`${host}/file/list`);
 };
 
-const deleteEbook = data => {
-  return service.post(`${host}/ebook/delete`, data);
+const deleteFile = data => {
+  return service.post(`${host}/file/delete`, data);
 };
 
-export { checkAuth, getProfile, uploadEbook, getEbookList, deleteEbook };
+export { checkAuth, getProfile, uploadFile, getFileList, deleteFile };

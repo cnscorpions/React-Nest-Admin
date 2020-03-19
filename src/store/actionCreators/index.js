@@ -12,9 +12,10 @@ const spreadSidebar = () => ({
 });
 
 // authenticate or not
-const authenticate = (token, history) => ({
+const authenticate = (user, token, history) => ({
   type: types.AUTH,
   payload: {
+    user: user,
     token: token,
     history: history
   }
@@ -31,7 +32,9 @@ const login = (username, password, history) => {
       .checkAuth(username, password)
       .then(res => {
         msgService("success", "登录成功！");
-        dispatch(authenticate(res.data.data.token, history)); // TODO 要封装axios返回结果
+        dispatch(
+          authenticate(res.data.data.user, res.data.data.token, history)
+        ); // TODO 要封装axios返回结果
         history.push("/");
       })
       .catch(error => {
@@ -40,14 +43,5 @@ const login = (username, password, history) => {
       });
   };
 };
-
-// upload ebook
-// const addEbook = () => ({
-//   type: types.ADD_EBOOK,
-//   payload: {
-//     isEdit: false,
-//     form: null
-//   }
-// });
 
 export { collapseSidebar, spreadSidebar, authenticate, unauthenticate, login };

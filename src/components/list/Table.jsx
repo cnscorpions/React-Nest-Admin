@@ -19,10 +19,10 @@ export class EbookTable extends Component {
 
     return (
       <Table dataSource={data} rowKey={record => record._id}>
-        <Column title="书名" dataIndex="originalName" key="originalName" />
-        <Column title="作者" dataIndex="author" key="author" />
-        <Column title="书名" dataIndex="publisher" key="publisher" />
-        <Column title="语言" dataIndex="language" key="language" />
+        <Column title="文件名" dataIndex="originalName" key="originalName" />
+        <Column title="上传者" dataIndex="author" key="author" />
+        <Column title="上传时间" dataIndex="publisher" key="publisher" />
+        <Column title="文件大小" dataIndex="language" key="language" />
         <Column
           title="操作"
           key="action"
