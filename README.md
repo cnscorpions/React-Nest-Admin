@@ -16,9 +16,9 @@
 ## 简介
 
 [ React Nest Admin ]([https://github.com/cnscorpions/React-Nest-Admin](https://github.com/cnscorpions/React-Nest-Admin)) 是怎么来的？<br/>
-学习React想要找一个练手的项目，结果市面上开源的都是各种TODO App，甚至于[Read World系列](https://github.com/gothinkster/realworld)也很难让人满意。付费课程，也很难详尽地讲清楚方方面面。同时，Admin, dashboard之类的中后台的需求日愈旺盛，值得前端开发者多多关注。于是，就有了这样一个项目，本人预期如下：
-1. 这是一个产品，能贯穿前端（组件树拆分，开发，版本管理，单元测试，打包部署），后端（接口开发，单元测试，打包部署等），运维（服务器环境搭建，CI & CD等）始终;
-2. 这是一个Admin解决方案，始于一个图书管理系统，涉及用户登录注册，用户鉴权，权限控制等等;
+学习React想要找一个练手的项目，结果市面上开源的都是各种TODO App，甚至于[Real World系列](https://github.com/gothinkster/realworld)也很难让人满意。付费课程，也很难详尽地讲清楚方方面面。同时，Admin, dashboard之类的中后台的需求日愈旺盛，值得前端开发者多多关注。于是，就有了这样一个项目，本人预期如下：
+1. 这是一个产品，能贯穿前端（开发，版本管理，单元测试，打包部署），后端（接口开发，单元测试，打包部署等），运维（服务器环境搭建，CI & CD等）
+2. 这是一个Admin解决方案，涉及用户登录注册，用户鉴权，权限控制等等;
 3. 这是一套Web项目的完整学习资料，涉及到相关知识会提供Roadmap和tips
 
 - [在线版本](https://react-nestjs-admin.xyz) 账号密码：`admin 123` or `test 123`
@@ -35,8 +35,17 @@
 本项目前端基于CRA搭建，技术栈涉及es6+, react, react-router, react-redux（以及redux-devTools, redux-thunk, react-persist等中间件），axios和ant design of react，sass, CSS Module等等，后端基于nest-cli搭建，技术栈涉及Typescript, nest.js及其中间件，mongodb, mongoose, rxjs等等，运维涉及MEAN环境搭建（涉及到Nginx的偏多），PM2部署node应用，Docker部署实践，Travis CI集成等等。提前了解其中知识会对使用本项目大有帮助。
 
 系列教程如下：
-1.
-2. 
+1.  
+
+## 效果图
+- 登录页
+![登录页面](https://react-nest-admin.oss-cn-hangzhou.aliyuncs.com/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.png)
+
+- 首页
+![首页](https://react-nest-admin.oss-cn-hangzhou.aliyuncs.com/%E9%A6%96%E9%A1%B5.png)
+
+- 文件上传
+![文件上传](https://react-nest-admin.oss-cn-hangzhou.aliyuncs.com/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png)
 
 ## 功能及技术实现
 - 登录 & 注册
@@ -57,20 +66,20 @@
 	- [x] axios拦截请求，注入token
 	- [x] 后台filter自定义全局HTTP异常捕获
 	- [x] 后台请求响应拦截，统一放回格式
-- 电子书
+- 文件上传
 	- [x] 上传
 	- [x] 列表查询
 	- [x] 删除
-	- [ ] 编辑（涉及到epub电子书解析）
 - 计划中
 	- [ ] 帐号密码MD5+salt加密
 	- [ ] token失效弹窗提示
 	- [ ] refresh token
-	- [ ] 前端使用更简洁的import path
+	- [ ] 前端import path使用alias
 	- [ ] 添加自定义滚动条
 	- [ ] 写unit test
 	- [ ] 配置travis初步实现CI
 	- [ ] Docker容器化
+	- [ ] i18n
 
 ## 开发
 ```
