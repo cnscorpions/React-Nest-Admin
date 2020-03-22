@@ -41,10 +41,7 @@ class LoginForm extends Component {
           )}
         </Form.Item>
         <Form.Item>
-          {getFieldDecorator("remember", {
-            valuePropName: "checked",
-            initialValue: true
-          })(<Checkbox>记住密码</Checkbox>)}
+          <a href="/home">现在注册！</a>
           <a className={styles["login-form-forgot"]} href="/forget-pwd">
             忘记密码
           </a>
@@ -55,7 +52,6 @@ class LoginForm extends Component {
           >
             登录
           </Button>
-          或 <a href="/home">现在注册！</a>
         </Form.Item>
       </Form>
     );
