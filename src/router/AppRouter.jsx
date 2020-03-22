@@ -7,6 +7,7 @@ import AppLayout from "../components/layout/AppLayout";
 
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
+import Signup from "../pages/Signup/Signup";
 import List from "../pages/List/List";
 import NotFound from "../pages/NotFound";
 import Add from "../pages/Add/Add";
@@ -84,6 +85,9 @@ function AppRouter(props) {
   return (
     <Router>
       <Switch>
+        <Route exact path="/signup">
+          <Signup />
+        </Route>
         <Route exact path="/login">
           <Login />
         </Route>

@@ -14,17 +14,22 @@ function Login(props) {
   let { from } = location.state || { from: { pathname: "/" } };
 
   const { changeAuthStateToAuth } = props;
+  // 用户登录
   let login = ({ username, password }) => {
     // 修改auth状态，并且跳转
     changeAuthStateToAuth(username, password, history);
     history.replace(from);
   };
 
+  // 跳转到signup页面
+  let goSignup = () => {
+    history.push("/signup");
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles["login-box"]}>
         <h3 className={styles.title}>通用管理后台</h3>
-        <LoginForm submitToParent={login} />
+        <LoginForm submitToParent={login} goSignup={goSignup} />
       </div>
     </div>
   );

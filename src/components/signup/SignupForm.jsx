@@ -1,22 +1,42 @@
 import React, { Component } from "react";
 import { Form, Icon, Input, Button } from "antd";
-import * as styles from "./LoginForm.module.scss";
+import { registerUser } from "../../api/index";
+import msgService from "../message/message";
+import * as styles from "./SignupForm.module.scss";
 
-class LoginForm extends Component {
+class SignupForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log("Received values of form: ", values);
-        this.props.submitToParent(values);
+        const { username, password } = values;
+        if (username === "admin") {
+          msgService("error", "无权注册admin用户");
+          return false;
+        }
+        this.handleRequest(username, password);
       }
     });
   };
 
-  toParentGoSignup = () => {
-    const { goSignup } = this.props;
-    goSignup();
-  };
+  // 发送请求
+  handleRequest(username, password) {
+    registerUser(username, password)
+      .then(res => {
+        msgService("success", "注册成功！");
+        this.backToLogin();
+      })
+      .catch(error => {
+        msgService("error", "用户已注册！");
+        console.log(error);
+      });
+  }
+
+  backToLogin() {
+    const { submitToParent } = this.props;
+    submitToParent();
+  }
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -46,16 +66,12 @@ class LoginForm extends Component {
           )}
         </Form.Item>
         <Form.Item>
-          <span style={{ color: "#eee" }} onClick={this.toParentGoSignup}>
-            现在注册！
-          </span>
-          <span className={styles["login-form-button"]}>忘记密码</span>
           <Button
             type="primary"
             htmlType="submit"
             className={styles["login-form-button"]}
           >
-            登录
+            注册
           </Button>
         </Form.Item>
       </Form>
@@ -63,6 +79,6 @@ class LoginForm extends Component {
   }
 }
 
-const WrappedLoginForm = Form.create({ name: "normal_login" })(LoginForm);
+const WrappedSignupForm = Form.create({ name: "normal_login" })(SignupForm);
 
-export default WrappedLoginForm;
+export default WrappedSignupForm;

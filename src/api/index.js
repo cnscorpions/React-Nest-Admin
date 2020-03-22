@@ -8,7 +8,15 @@ const host =
 
 // ajax req for login to get token
 const checkAuth = (username, password) => {
-  return axios.post(`${host}/login`, {
+  return axios.post(`${host}/user/login`, {
+    username: username,
+    password: password
+  });
+};
+
+// register a user
+const registerUser = (username, password) => {
+  return axios.post(`${host}/user/signup`, {
     username: username,
     password: password
   });
@@ -30,4 +38,11 @@ const deleteFile = data => {
   return service.post(`${host}/file/delete`, data);
 };
 
-export { checkAuth, getProfile, uploadFile, getFileList, deleteFile };
+export {
+  checkAuth,
+  registerUser,
+  getProfile,
+  uploadFile,
+  getFileList,
+  deleteFile
+};
