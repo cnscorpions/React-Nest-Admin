@@ -18,6 +18,11 @@ class LoginForm extends Component {
     goSignup();
   };
 
+  toParentGoResetPwd = () => {
+    const { goResetPwd } = this.props;
+    goResetPwd();
+  };
+
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
@@ -46,10 +51,10 @@ class LoginForm extends Component {
           )}
         </Form.Item>
         <Form.Item>
-          <span style={{ color: "#eee" }} onClick={this.toParentGoSignup}>
-            现在注册！
+          <span className={styles["others-box"]}>
+            <i onClick={this.toParentGoSignup}>现在注册！</i>
+            <i onClick={this.toParentGoResetPwd}>重置密码</i>
           </span>
-          <span className={styles["login-form-button"]}>忘记密码</span>
           <Button
             type="primary"
             htmlType="submit"

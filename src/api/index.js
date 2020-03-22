@@ -22,6 +22,15 @@ const registerUser = (username, password) => {
   });
 };
 
+// 重置密码
+const resetPwd = (username, oldPwd, newPwd) => {
+  return axios.post(`${host}/user/reset-pwd`, {
+    username: username,
+    oldPwd: oldPwd,
+    newPwd: newPwd
+  });
+};
+
 const getProfile = () => {
   return service.get(`${host}/profile`);
 };
@@ -41,6 +50,7 @@ const deleteFile = data => {
 export {
   checkAuth,
   registerUser,
+  resetPwd,
   getProfile,
   uploadFile,
   getFileList,

@@ -8,6 +8,7 @@ import AppLayout from "../components/layout/AppLayout";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
+import ResetPwd from "../pages/ResetPwd/ResetPwd";
 import List from "../pages/List/List";
 import NotFound from "../pages/NotFound";
 import Add from "../pages/Add/Add";
@@ -90,6 +91,9 @@ function AppRouter(props) {
         </Route>
         <Route exact path="/login">
           <Login />
+        </Route>
+        <Route exact path="/reset-pwd">
+          <ResetPwd />
         </Route>
         {Routes.map((route, index) => (
           <PrivateRoute key={index} exact path={route.path} isAuth={isAuth}>

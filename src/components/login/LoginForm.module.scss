@@ -4,9 +4,14 @@
 }
 
 .login-form-button {
-  color: #eee;
+  width: 100%;
 }
 
-.login-form-button {
-  width: 100%;
+.others-box {
+  display: inline-block;
+  > i {
+    float: left;
+    color: #eee;
+    cursor: pointer;
+  }
 }

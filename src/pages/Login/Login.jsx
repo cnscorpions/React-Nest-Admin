@@ -25,11 +25,20 @@ function Login(props) {
   let goSignup = () => {
     history.push("/signup");
   };
+
+  // 跳转到reset password页面
+  let goResetPwd = () => {
+    history.push("/reset-pwd");
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles["login-box"]}>
         <h3 className={styles.title}>通用管理后台</h3>
-        <LoginForm submitToParent={login} goSignup={goSignup} />
+        <LoginForm
+          submitToParent={login}
+          goSignup={goSignup}
+          goResetPwd={goResetPwd}
+        />
       </div>
     </div>
   );
