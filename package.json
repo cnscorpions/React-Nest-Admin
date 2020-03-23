@@ -9,6 +9,7 @@
     "antd": "^3.26.12",
     "axios": "^0.19.2",
     "babel-plugin-import": "^1.13.0",
+    "bizcharts": "^3.5.8",
     "customize-cra": "^0.9.1",
     "husky": "^4.2.3",
     "js-cookie": "^2.2.1",
