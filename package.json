@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "git": "git add . && git commit -m",
-    "postgit": "git pull && git push && git status && yarn update",
+    "postgit": "git pull && git push && git status",
     "update": "pm2 deploy production update",
     "formate": "./node_modules/.bin/prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "build": "react-app-rewired --max_old_space_size=4096 build",
