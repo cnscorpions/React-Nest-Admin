@@ -11,7 +11,7 @@ import Signup from "../pages/Signup/Signup";
 import ResetPwd from "../pages/ResetPwd/ResetPwd";
 import Charts from "../pages/Charts/Charts";
 import List from "../pages/List/List";
-import NotFound from "../pages/NotFound";
+import NotFound from "../pages/NotFound/NotFound";
 import Add from "../pages/Add/Add";
 
 const { SubMenu } = Menu;
@@ -40,13 +40,13 @@ const sidebar = (
       }
     >
       <Menu.Item key="sub1-1">
-        <Link to="/list">
+        <Link to="/file/list">
           <Icon type="ordered-list" />
           <span>文件列表</span>
         </Link>
       </Menu.Item>
       <Menu.Item key="sub1-2">
-        <Link to="/add">
+        <Link to="/file/add">
           <Icon type="upload" />
           <span>文件上传</span>
         </Link>
@@ -92,12 +92,29 @@ const sidebar = (
         <span>文本编辑器</span>
       </Link>
     </Menu.Item>
-    <Menu.Item key="4">
-      <Link to="/">
-        <Icon type="bug" />
-        <span>错误页面</span>
-      </Link>
-    </Menu.Item>
+    <SubMenu
+      key="sub3"
+      title={
+        <span>
+          <Icon type="bug" />
+          <span>错误页面</span>
+        </span>
+      }
+    >
+      <Menu.Item key="sub3-1">
+        <Link to="/not-found">
+          <Icon type="inbox" />
+          <span>404</span>
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="sub3-2">
+        <Link to="/unauthorized">
+          <Icon type="stop" />
+          <span>403</span>
+        </Link>
+      </Menu.Item>
+    </SubMenu>
+
     <Menu.Item key="6">
       <a
         href="https://github.com/cnscorpions/React-Nest-Admin"
@@ -120,13 +137,13 @@ const Routes = [
     role: ["root", "user"] // root or user
   },
   {
-    path: "/list",
+    path: "/file/list",
     component: List,
     isAuthenticated: true,
     role: ["root", "user"]
   },
   {
-    path: "/add",
+    path: "/file/add",
     component: Add,
     isAuthenticated: true,
     role: ["root"]
@@ -134,6 +151,12 @@ const Routes = [
   {
     path: "/charts/:type",
     component: Charts,
+    isAuthenticated: true,
+    role: ["root", "user"]
+  },
+  {
+    path: "/not-found",
+    component: NotFound,
     isAuthenticated: true,
     role: ["root", "user"]
   }

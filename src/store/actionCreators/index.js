@@ -12,10 +12,11 @@ const spreadSidebar = () => ({
 });
 
 // authenticate or not
-const authenticate = (user, token, history) => ({
+const authenticate = (username, roles, token, history) => ({
   type: types.AUTH,
   payload: {
-    user: user,
+    username: username,
+    roles: roles,
     token: token,
     history: history
   }
@@ -33,7 +34,12 @@ const login = (username, password, history) => {
       .then(res => {
         msgService("success", "登录成功！");
         dispatch(
-          authenticate(res.data.data.user, res.data.data.token, history)
+          authenticate(
+            res.data.data.username,
+            res.data.data.roles,
+            res.data.data.token,
+            history
+          )
         ); // TODO 要封装axios返回结果
         history.push("/");
       })

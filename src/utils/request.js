@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getToken } from "./storage";
+import { getToken, getRoles } from "./storage";
 
 // create a axios instance
 const service = axios.create({
@@ -14,6 +14,7 @@ service.defaults.retryDelay = 1000;
 service.interceptors.request.use(config => {
   // if token exists, then added to http header
   if (getToken()) config.headers["Authorization"] = getToken();
+  if (getRoles()) config.headers["Roles"] = getRoles();
   return config;
 });
 
@@ -26,6 +27,7 @@ const uploadService = axios.create({
 // insert token and set up formData content type
 uploadService.interceptors.request.use(config => {
   if (getToken()) config.headers["Authorization"] = getToken();
+  if (getRoles()) config.headers["Roles"] = getRoles();
   config.headers["Content-Type"] = "multipart/form-data";
   return config;
 });

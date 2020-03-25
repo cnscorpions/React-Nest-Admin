@@ -1,7 +1,8 @@
 import * as types from "../actionTypes/index";
 
 const initialState = {
-  user: null,
+  username: null,
+  roles: [],
   isAuth: false,
   authToken: "",
   history: null
@@ -11,14 +12,16 @@ const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.AUTH:
       return Object.assign({}, state, {
-        user: action.payload.user,
+        username: action.payload.username,
+        roles: action.payload.roles,
         isAuth: true,
         authToken: action.payload.token,
         history: action.payload.history
       });
     case types.AUTH_NOT:
       return Object.assign({}, state, {
-        user: null,
+        username: null,
+        roles: [],
         isAuth: false,
         authToken: "",
         history: null

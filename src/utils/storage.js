@@ -6,17 +6,25 @@ const getToken = () => {
   return authToken;
 };
 
-// 删除token
+// 删除
 const removeToken = () => {
   sessionStorage.removeItem("persist:root");
 };
 
-// 获取用户
+// 获取用户名
 const getUser = () => {
   const data = sessionStorage.getItem("persist:root");
   const { auth } = JSON.parse(data);
-  const { user } = JSON.parse(auth);
-  return user;
+  const { username } = JSON.parse(auth);
+  return username;
 };
 
-export { getToken, removeToken, getUser };
+// 获取角色
+const getRoles = () => {
+  const data = sessionStorage.getItem("persist:root");
+  const { auth } = JSON.parse(data);
+  const { roles } = JSON.parse(auth);
+  return roles;
+};
+
+export { getToken, removeToken, getUser, getRoles };

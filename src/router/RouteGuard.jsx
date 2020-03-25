@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, useHistory } from "react-router-dom";
 
 function PrivateRoute({ children, ...rest }) {
   const { isAuth } = { ...rest };
