@@ -4,12 +4,10 @@ import { getRoles } from "../utils/storage";
 
 function PrivateRoute({ children, ...rest }) {
   let location = useLocation();
-  const { pathname } = location;
   let { isAuth, definedRoles } = { ...rest };
-  let roles = getRoles();
 
-  // 对比role，权限不够跳转
-  if (getAuthorizedState(roles, definedRoles, pathname)) {
+  // 权限不足跳转
+  if (getAuthorizedState(definedRoles, location.pathname)) {
     return <Redirect to={{ pathname: "/not-allow" }} />;
   }
 
@@ -33,13 +31,16 @@ function PrivateRoute({ children, ...rest }) {
   );
 }
 
-const getAuthorizedState = (roles, definedRoles, pathname) => {
-  const isAuthedPath = ["/login", "/not-found", "/not-allow"].find(
+const getAuthorizedState = (definedRoles, pathname) => {
+  const isNotAuthedPath = ["/login", "/not-found", "/not-allow"].find(
     path => path === pathname
   );
-  // 条件为非认证路径下，前端获取的roles数组非空，并且包含在路由定义的数组中的
+
+  let roles = getRoles() || [];
+
+  // 条件为认证路径下，前端获取的roles数组非空，并且包含在路由定义的数组中
   return (
-    !isAuthedPath &&
+    !isNotAuthedPath &&
     (!roles || !roles.every(role => !!definedRoles.find(item => item === role)))
   );
 };

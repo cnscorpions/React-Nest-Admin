@@ -47,6 +47,8 @@ const deleteFile = data => {
   return service.post(`${host}/file/delete`, data);
 };
 
+const getAllUserUrl = `${host}/user/list`;
+
 export {
   checkAuth,
   registerUser,
@@ -54,5 +56,6 @@ export {
   getProfile,
   uploadFile,
   getFileList,
-  deleteFile
+  deleteFile,
+  getAllUserUrl
 };

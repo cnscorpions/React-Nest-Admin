@@ -2,8 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/actionCreators/index";
 import { useHistory } from "react-router-dom";
+import { getUser } from "../../utils/storage";
 
-import { Layout, Menu, Icon, Dropdown } from "antd";
+import { Layout, Menu, Icon, Dropdown, Avatar } from "antd";
+
 import styles from "./AppLayout.module.scss";
 
 const { Header, Sider, Content } = Layout;
@@ -45,6 +47,18 @@ const AppLayout = props => {
           />
           <span className={styles.home}>首页</span>
           <div className={styles["icon-group"]}>
+            <Avatar
+              style={{
+                color: "#f56a00",
+                backgroundColor: "#fde3cf",
+                marginRight: "10px"
+              }}
+            >
+              {getUser()[0]}
+            </Avatar>
+            <span>
+              <Icon type="notification" />
+            </span>
             <span className={styles["icon-box"]}>
               <Dropdown
                 overlay={() => menu(signOut, history)}

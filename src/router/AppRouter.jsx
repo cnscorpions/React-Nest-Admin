@@ -14,6 +14,7 @@ import List from "../pages/List/List";
 import NotFound from "../pages/NotFound/NotFound";
 import NotAllow from "../pages/NotAllow/NotAllow";
 import Add from "../pages/Add/Add";
+import UserManagement from "../pages/User-Management/UserManagement";
 
 const { SubMenu } = Menu;
 
@@ -27,7 +28,7 @@ const sidebar = lastPath => {
         </Link>
       </Menu.Item>
       <Menu.Item key="5">
-        <Link to={{ pathname: "/", state: { from: lastPath } }}>
+        <Link to={{ pathname: "/user-management", state: { from: lastPath } }}>
           <Icon type="user" />
           <span>用户管理</span>
         </Link>
@@ -143,37 +144,43 @@ const Routes = [
     path: "/",
     component: Home,
     isAuthenticated: true, // authed
-    roles: ["root", "user"] // root or user
+    roles: ["admin", "user"] // root, user两种角色
   },
   {
     path: "/file/list",
     component: List,
     isAuthenticated: true,
-    roles: ["root", "user"]
+    roles: ["admin", "user"]
   },
   {
     path: "/file/add",
     component: Add,
     isAuthenticated: true,
-    roles: ["root"]
+    roles: ["admin"]
   },
   {
     path: "/charts/:type",
     component: Charts,
     isAuthenticated: true,
-    roles: ["root", "user"]
+    roles: ["admin", "user"]
   },
   {
     path: "/not-found",
     component: NotFound,
     isAuthenticated: true,
-    roles: ["root", "user"]
+    roles: ["admin", "user"]
   },
   {
     path: "/not-allow",
     component: NotAllow,
     isAuthenticated: true,
-    roles: ["root", "user"]
+    roles: ["admin", "user"]
+  },
+  {
+    path: "/user-management",
+    component: UserManagement,
+    isAuthenticated: true,
+    roles: ["admin", "user"]
   }
 ];
 
