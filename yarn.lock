@@ -3297,6 +3297,13 @@ connect-history-api-fallback@^1.6.0:
   resolved "https://registry.npm.taobao.org/connect-history-api-fallback/download/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha1-izIIk1kwjRERFdgcrT/Oq4iPl7w=
 
+connected-react-router@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.npm.taobao.org/connected-react-router/download/connected-react-router-6.8.0.tgz#ddc687b31d498322445d235d660798489fa56cae"
+  integrity sha1-3caHsx1JgyJEXSNdZgeYSJ+lbK4=
+  dependencies:
+    prop-types "^15.7.2"
+
 console-browserify@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/console-browserify/download/console-browserify-1.2.0.tgz#67063cef57ceb6cf4993a2ab3a55840ae8c49336"

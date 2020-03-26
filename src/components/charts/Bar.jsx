@@ -37,7 +37,6 @@ export class BarChart extends React.Component {
         max: 30
       }
     };
-    let chart;
 
     class RenderChart extends React.Component {
       constructor() {

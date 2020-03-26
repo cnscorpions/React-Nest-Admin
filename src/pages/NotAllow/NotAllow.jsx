@@ -1,24 +1,16 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { getRoles } from "../../utils/storage";
 
-import * as styles from "./notFound.module.scss";
+import * as styles from "./notAllow.module.scss";
 
-function NotFound(props) {
+function NotAllow(props) {
   let location = useLocation();
+  const roles = getRoles();
+
   return (
     <div className={styles["wrapper"]}>
-      <div className={styles["imgBlock"]}>
-        <div className={styles["imgEle"]}></div>
-      </div>
-      <div className={styles["content"]}>
-        <h1>404，找不到{location.state.from}</h1>
-        <div className={styles["desc"]}></div>
-        <div className={styles["actions"]}>
-          <a href="/">
-            <span>回到首页</span>
-          </a>
-        </div>
-      </div>
+      <h3>角色{roles}无权访问</h3>
       <div
         style={{
           position: "absolute",
@@ -37,4 +29,4 @@ function NotFound(props) {
   );
 }
 
-export default NotFound;
+export default NotAllow;
