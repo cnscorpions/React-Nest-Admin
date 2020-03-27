@@ -31,7 +31,7 @@ const columns = [
   {
     title: "是否停用",
     key: "isEnabled",
-    render: isEnabled => (
+    render: ({ isEnabled }) => (
       <Switch
         disabled
         checkedChildren="停用"

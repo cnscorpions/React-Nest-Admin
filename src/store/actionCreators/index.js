@@ -11,6 +11,17 @@ const spreadSidebar = () => ({
   type: types.SIDEBAR_SPREAD
 });
 
+const initUser = username => ({
+  type: types.INIT_USERNAME,
+  payload: {
+    username: username
+  }
+});
+
+const setDefaultLayout = () => ({
+  type: "default"
+});
+
 // authenticate or not
 const authenticate = (username, roles, token, history) => ({
   type: types.AUTH,
@@ -41,6 +52,7 @@ const login = (username, password, history) => {
             history
           )
         ); // TODO 要封装axios返回结果
+        dispatch(initUser(res.data.data.username));
         history.push("/");
       })
       .catch(error => {
@@ -50,4 +62,12 @@ const login = (username, password, history) => {
   };
 };
 
-export { collapseSidebar, spreadSidebar, authenticate, unauthenticate, login };
+export {
+  collapseSidebar,
+  spreadSidebar,
+  initUser,
+  setDefaultLayout,
+  authenticate,
+  unauthenticate,
+  login
+};

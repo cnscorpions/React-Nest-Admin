@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/actionCreators/index";
 import { useHistory } from "react-router-dom";
-import { getUser } from "../../utils/storage";
 
 import { Layout, Menu, Icon, Dropdown, Avatar } from "antd";
 
@@ -31,7 +30,7 @@ const AppLayout = props => {
   let history = useHistory();
 
   // 结构赋值
-  const { isCollapsed, toggle, signOut } = props;
+  const { isCollapsed, username, toggle, signOut } = props;
 
   return (
     <Layout className={styles.wrapper}>
@@ -54,7 +53,7 @@ const AppLayout = props => {
                 marginRight: "10px"
               }}
             >
-              {getUser()[0]}
+              {username ? username[0] : ""}
             </Avatar>
             <span>
               <Icon type="notification" />
@@ -99,7 +98,8 @@ const AppLayout = props => {
 };
 
 const mapStateToProps = state => ({
-  isCollapsed: state.layout.isCollapsed
+  isCollapsed: state.layout.isCollapsed,
+  username: state.layout.username
 });
 
 const mapDispatchToProps = dispatch => {
@@ -111,8 +111,10 @@ const mapDispatchToProps = dispatch => {
       dispatch(action);
     },
     signOut(history) {
-      const action = actionCreators.unauthenticate();
-      dispatch(action);
+      const unAuth = actionCreators.unauthenticate();
+      dispatch(unAuth);
+      const setDefaultLayout = actionCreators.setDefaultLayout();
+      dispatch(setDefaultLayout);
       history.push("/login");
     }
   };
