@@ -15,6 +15,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import NotAllow from "../pages/NotAllow/NotAllow";
 import Add from "../pages/Add/Add";
 import UserManagement from "../pages/User-Management/UserManagement";
+import RichTextEditor from "../pages/RichTextEditor/RichTextEditor";
 
 const { SubMenu } = Menu;
 
@@ -22,13 +23,13 @@ const sidebar = lastPath => {
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
       <Menu.Item key="1">
-        <Link to={{ pathname: "/", state: { from: lastPath } }}>
+        <Link to={{ pathname: "/" }}>
           <Icon type="home" />
           <span>首页</span>
         </Link>
       </Menu.Item>
       <Menu.Item key="5">
-        <Link to={{ pathname: "/user-management", state: { from: lastPath } }}>
+        <Link to={{ pathname: "/user-management" }}>
           <Icon type="user" />
           <span>用户管理</span>
         </Link>
@@ -43,13 +44,13 @@ const sidebar = lastPath => {
         }
       >
         <Menu.Item key="sub1-1">
-          <Link to={{ pathname: "/file/list", state: { from: lastPath } }}>
+          <Link to={{ pathname: "/file/list" }}>
             <Icon type="ordered-list" />
             <span>文件列表</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub1-2">
-          <Link to={{ pathname: "/file/add", state: { from: lastPath } }}>
+          <Link to={{ pathname: "/file/add" }}>
             <Icon type="upload" />
             <span>文件上传</span>
           </Link>
@@ -65,42 +66,53 @@ const sidebar = lastPath => {
         }
       >
         <Menu.Item key="sub2-1">
-          <Link
-            to={{ pathname: "/charts/line-chart", state: { from: lastPath } }}
-          >
+          <Link to={{ pathname: "/charts/line-chart" }}>
             <Icon type="line-chart" />
             <span>折线图</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub2-2">
-          <Link
-            to={{ pathname: "/charts/bar-chart", state: { from: lastPath } }}
-          >
+          <Link to={{ pathname: "/charts/bar-chart" }}>
             <Icon type="bar-chart" />
             <span>柱状图</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub2-3">
-          <Link
-            to={{ pathname: "/charts/pie-chart", state: { from: lastPath } }}
-          >
+          <Link to={{ pathname: "/charts/pie-chart" }}>
             <Icon type="pie-chart" />
             <span>饼状图</span>
           </Link>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key="3">
-        <Link to={{ pathname: "/", state: { from: lastPath } }}>
+        <Link to={{ pathname: "/" }}>
           <Icon type="file-excel" />
           <span>Excel表格</span>
         </Link>
       </Menu.Item>
-      <Menu.Item key="7">
-        <Link to={{ pathname: "/", state: { from: lastPath } }}>
-          <Icon type="file-excel" />
-          <span>文本编辑器</span>
-        </Link>
-      </Menu.Item>
+      <SubMenu
+        key="sub4"
+        title={
+          <span>
+            <Icon type="edit" />
+            <span>文本编辑器</span>
+          </span>
+        }
+      >
+        <Menu.Item key="sub3-1">
+          <Link to={{ pathname: "/rich-text-editor" }}>
+            <Icon type="html5" />
+            <span>富文本编辑器</span>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="sub3-2">
+          <Link to={{ pathname: "/" }}>
+            <Icon type="file-markdown" />
+            <span>Markdown编辑器</span>
+          </Link>
+        </Menu.Item>
+      </SubMenu>
+
       <SubMenu
         key="sub3"
         title={
@@ -111,13 +123,13 @@ const sidebar = lastPath => {
         }
       >
         <Menu.Item key="sub3-1">
-          <Link to={{ pathname: "/not-found", state: { from: lastPath } }}>
+          <Link to={{ pathname: "/not-found" }}>
             <Icon type="inbox" />
             <span>404</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub3-2">
-          <Link to={{ pathname: "/not-allow", state: { from: lastPath } }}>
+          <Link to={{ pathname: "/not-allow" }}>
             <Icon type="stop" />
             <span>403</span>
           </Link>
@@ -179,6 +191,12 @@ const Routes = [
   {
     path: "/user-management",
     component: UserManagement,
+    isAuthenticated: true,
+    roles: ["admin", "user"]
+  },
+  {
+    path: "/rich-text-editor",
+    component: RichTextEditor,
     isAuthenticated: true,
     roles: ["admin", "user"]
   }
