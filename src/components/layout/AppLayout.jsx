@@ -73,7 +73,8 @@ const AppLayout = props => {
             margin: "24px 16px",
             padding: 24,
             background: "#fff",
-            minHeight: 280
+            minHeight: 280,
+            overflowY: "scroll"
           }}
         >
           {props.content}
