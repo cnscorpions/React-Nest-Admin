@@ -1,11 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { getRoles } from "../../utils/storage";
 
 import * as styles from "./notAllow.module.scss";
 
 function NotAllow(props) {
-  let location = useLocation();
   const roles = getRoles();
 
   return (

@@ -16,6 +16,7 @@ import NotAllow from "../pages/NotAllow/NotAllow";
 import Add from "../pages/Add/Add";
 import UserManagement from "../pages/User-Management/UserManagement";
 import RichTextEditor from "../pages/RichTextEditor/RichTextEditor";
+import MarkdownEditor from "../pages/MarkDownEditor/MarkDownEditor";
 
 const { SubMenu } = Menu;
 
@@ -106,7 +107,7 @@ const sidebar = lastPath => {
           </Link>
         </Menu.Item>
         <Menu.Item key="sub3-2">
-          <Link to={{ pathname: "/" }}>
+          <Link to={{ pathname: "/md-editor" }}>
             <Icon type="file-markdown" />
             <span>Markdown编辑器</span>
           </Link>
@@ -197,6 +198,12 @@ const Routes = [
   {
     path: "/rich-text-editor",
     component: RichTextEditor,
+    isAuthenticated: true,
+    roles: ["admin", "user"]
+  },
+  {
+    path: "/md-editor",
+    component: MarkdownEditor,
     isAuthenticated: true,
     roles: ["admin", "user"]
   }
