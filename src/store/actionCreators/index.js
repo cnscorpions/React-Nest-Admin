@@ -19,7 +19,7 @@ const initUser = username => ({
 });
 
 const setDefaultLayout = () => ({
-  type: "default"
+  type: types.SET_DEFAULT_LAYOUT
 });
 
 // authenticate or not

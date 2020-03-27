@@ -11,8 +11,9 @@ export const history = createBrowserHistory();
 // persist state in redux
 const persistConfig = {
   key: "root",
-  storage,
-  whitelist: ["auth", "layout"]
+  storage: storage,
+  whitelist: ["auth", "layout"],
+  debug: true
 };
 
 const persistedReducer = persistReducer(

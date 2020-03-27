@@ -19,11 +19,13 @@ const layoutReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         username: action.payload.username
       });
-    default:
+    case types.SET_DEFAULT_LAYOUT:
       return {
         isCollapsed: false,
         username: ""
       };
+    default:
+      return state;
   }
 };
 
