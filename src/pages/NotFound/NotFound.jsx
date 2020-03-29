@@ -11,7 +11,7 @@ function NotFound(props) {
         <div className={styles["imgEle"]}></div>
       </div>
       <div className={styles["content"]}>
-        <h1>404，找不到{location.state.from}</h1>
+        <h1>404，找不到{location.state ? location.state.from : null}</h1>
         <div className={styles["desc"]}></div>
         <div className={styles["actions"]}>
           <a href="/">
