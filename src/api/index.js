@@ -49,6 +49,8 @@ const deleteFile = data => {
 
 const getAllUserUrl = `${host}/user/list`;
 
+const getAllTableList = `${host}/excel/list`;
+
 export {
   checkAuth,
   registerUser,
@@ -57,5 +59,6 @@ export {
   uploadFile,
   getFileList,
   deleteFile,
-  getAllUserUrl
+  getAllUserUrl,
+  getAllTableList
 };

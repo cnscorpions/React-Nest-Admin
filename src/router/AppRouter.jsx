@@ -17,6 +17,7 @@ import Add from "../pages/Add/Add";
 import UserManagement from "../pages/User-Management/UserManagement";
 import RichTextEditor from "../pages/RichTextEditor/RichTextEditor";
 import MarkdownEditor from "../pages/MarkDownEditor/MarkDownEditor";
+import ExcelPage from "../pages/Excel/Excel";
 
 const { SubMenu } = Menu;
 
@@ -25,8 +26,8 @@ const sidebar = lastPath => {
     <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
       <Menu.Item key="1">
         <Link to={{ pathname: "/" }}>
-          <Icon type="home" />
-          <span>首页</span>
+          <Icon type="dashboard" />
+          <span>Dashboard</span>
         </Link>
       </Menu.Item>
       <Menu.Item key="5">
@@ -85,12 +86,24 @@ const sidebar = lastPath => {
           </Link>
         </Menu.Item>
       </SubMenu>
-      <Menu.Item key="3">
-        <Link to={{ pathname: "/" }}>
-          <Icon type="file-excel" />
-          <span>Excel表格</span>
-        </Link>
-      </Menu.Item>
+
+      <SubMenu
+        key="sub5"
+        title={
+          <span>
+            <Icon type="file-excel" />
+            <span>Excel表格</span>
+          </span>
+        }
+      >
+        <Menu.Item key="sub5-1">
+          <Link to={{ pathname: "/excel/export-csv" }}>
+            <Icon type="export" />
+            <span>Export csv</span>
+          </Link>
+        </Menu.Item>
+      </SubMenu>
+
       <SubMenu
         key="sub4"
         title={
@@ -100,13 +113,13 @@ const sidebar = lastPath => {
           </span>
         }
       >
-        <Menu.Item key="sub3-1">
+        <Menu.Item key="sub4-1">
           <Link to={{ pathname: "/rich-text-editor" }}>
             <Icon type="html5" />
             <span>富文本编辑器</span>
           </Link>
         </Menu.Item>
-        <Menu.Item key="sub3-2">
+        <Menu.Item key="sub4-2">
           <Link to={{ pathname: "/md-editor" }}>
             <Icon type="file-markdown" />
             <span>Markdown编辑器</span>
@@ -144,7 +157,7 @@ const sidebar = lastPath => {
           rel="noopener noreferrer"
         >
           <Icon type="github" />
-          <span>Githu</span>
+          <span>Github</span>
         </a>
       </Menu.Item>
     </Menu>
@@ -206,6 +219,12 @@ const Routes = [
     component: MarkdownEditor,
     isAuthenticated: true,
     roles: ["admin", "user"]
+  },
+  {
+    path: "/excel/:type",
+    component: ExcelPage,
+    isAuthenticated: true,
+    roles: ["admin"]
   }
 ];
 

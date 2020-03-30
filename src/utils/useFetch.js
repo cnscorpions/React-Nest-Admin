@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { service } from "../../utils/request";
+import { service } from "./request";
 
 const useFetch = url => {
   const [data, updateData] = useState(undefined);
