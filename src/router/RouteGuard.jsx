@@ -6,8 +6,8 @@ function PrivateRoute({ children, ...rest }) {
   let location = useLocation();
   let { isAuth, definedRoles } = { ...rest };
 
-  // 权限不足跳转
-  if (getAuthorizedState(definedRoles, location.pathname)) {
+  // 权限不足跳转（已登录）
+  if (isAuth && getAuthorizedState(definedRoles, location.pathname)) {
     return <Redirect to={{ pathname: "/not-allow" }} />;
   }
 
