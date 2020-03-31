@@ -1,6 +1,6 @@
 import React from "react";
-import { getUser } from "../../../utils/storage";
-import { uploadFile } from "../../../api/index";
+import { getUser } from "utils/storage";
+import { uploadFile } from "api/index";
 import { Upload, message, Icon } from "antd";
 
 const { Dragger } = Upload;

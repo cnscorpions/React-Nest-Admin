@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { getRoles } from "../utils/storage";
+import { getRoles } from "utils/storage";
 
 export const checkPermission = (isAuth, definedRoles, pathname) => {
   if (isAuth && getAuthorizedState(definedRoles, pathname)) {

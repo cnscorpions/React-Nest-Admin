@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Icon, Input, Button } from "antd";
-import { registerUser } from "../../api/index";
+import { registerUser } from "api/index";
 import msgService from "../message/message";
 import * as styles from "./SignupForm.module.scss";
 

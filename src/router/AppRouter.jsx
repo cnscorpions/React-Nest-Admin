@@ -4,16 +4,16 @@ import { connect } from "react-redux";
 import { Routes } from "./router.config";
 import PrivateRoute from "./RouteGuard";
 import { Menu, Icon } from "antd";
-import AppLayout from "../components/layout/AppLayout";
+import AppLayout from "components/layout/AppLayout";
 
-import Login from "../pages/Login/Login";
-import Signup from "../pages/Signup/Signup";
-import ResetPwd from "../pages/ResetPwd/ResetPwd";
-import NotFound from "../pages/NotFound/NotFound";
+import Login from "pages/Login/Login";
+import Signup from "pages/Signup/Signup";
+import ResetPwd from "pages/ResetPwd/ResetPwd";
+import NotFound from "pages/NotFound/NotFound";
 
 const { SubMenu } = Menu;
 
-const sidebar = lastPath => {
+const sidebar = () => {
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
       <Menu.Item key="1">

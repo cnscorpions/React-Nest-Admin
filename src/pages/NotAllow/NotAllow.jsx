@@ -1,5 +1,5 @@
 import React from "react";
-import { getRoles } from "../../utils/storage";
+import { getRoles } from "utils/storage";
 
 import * as styles from "./notAllow.module.scss";
 

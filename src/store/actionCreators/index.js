@@ -1,6 +1,6 @@
 import * as types from "../actionTypes/index";
-import * as api from "../../api/index";
-import msgService from "../../components/message/message";
+import * as api from "api/index";
+import msgService from "components/message/message";
 
 // collaspe sidebar or not
 const collapseSidebar = () => ({

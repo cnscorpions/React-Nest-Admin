@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import * as actionCreators from "../../store/actionCreators/index";
-import LoginForm from "../../components/login/LoginForm";
+import * as actionCreators from "store/actionCreators/index";
+import LoginForm from "components/login/LoginForm";
 
 import styles from "./login.module.scss";
 

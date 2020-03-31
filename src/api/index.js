@@ -1,5 +1,5 @@
 import axios from "axios";
-import { service, uploadService } from "../utils/request";
+import { service, uploadService } from "utils/request";
 
 const host =
   process.env.NODE_ENV !== "production"

@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import SignupForm from "../../components/signup/SignupForm";
+import SignupForm from "components/signup/SignupForm";
 
 import styles from "./signup.module.scss";
 

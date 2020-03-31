@@ -1,8 +1,8 @@
 import React from "react";
 import { Table, Tag, Switch } from "antd";
 
-import useFetch from "../../utils/useFetch";
-import { getAllUserUrl } from "../../api/index";
+import useFetch from "utils/useFetch";
+import { getAllUserUrl } from "api/index";
 
 const columns = [
   {

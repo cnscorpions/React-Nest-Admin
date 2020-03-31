@@ -1,5 +1,5 @@
 import { message } from "antd";
-import * as msgTypes from "../../utils/constant";
+import * as msgTypes from "utils/constant";
 
 const msgService = (type, msg) => {
   switch (type) {

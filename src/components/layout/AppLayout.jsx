@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as actionCreators from "../../store/actionCreators/index";
+import * as actionCreators from "store/actionCreators/index";
 import { useHistory } from "react-router-dom";
 
 import { Layout, Menu, Icon, Dropdown, Avatar } from "antd";

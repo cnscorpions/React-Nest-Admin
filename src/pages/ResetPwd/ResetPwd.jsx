@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import ResetPwdForm from "../../components/resetPwd/ResetPwdForm";
+import ResetPwdForm from "components/resetPwd/ResetPwdForm";
 import * as styles from "./reset-pwd.module.scss";
 
 function ResetPwd(props) {

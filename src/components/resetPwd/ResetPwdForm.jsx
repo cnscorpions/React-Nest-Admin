@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Icon, Input, Button } from "antd";
-import { resetPwd } from "../../api/index";
+import { resetPwd } from "api/index";
 import msgService from "../message/message";
 import * as styles from "./reset-pwd-form.module.scss";
 

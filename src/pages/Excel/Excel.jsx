@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import { ExportCSV } from "../../components/excel/ExportCSV";
+import { ExportCSV } from "components/excel/ExportCSV";
 
 const ExcelPage = () => {
   let location = useLocation();

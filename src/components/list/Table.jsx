@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table, Icon, Tag, Pagination } from "antd";
-import { numberToTime, kbToMb } from "../../utils/pipes";
+import { numberToTime, kbToMb } from "utils/pipes";
 
 const { Column } = Table;
 

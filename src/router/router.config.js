@@ -1,15 +1,15 @@
 // eslint-disable-next-line
 import { Link } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import Charts from "../pages/Charts/Charts";
-import List from "../pages/List/List";
-import NotFound from "../pages/NotFound/NotFound";
-import NotAllow from "../pages/NotAllow/NotAllow";
-import Add from "../pages/Add/Add";
-import UserManagement from "../pages/User-Management/UserManagement";
-import RichTextEditor from "../pages/RichTextEditor/RichTextEditor";
-import MarkdownEditor from "../pages/MarkDownEditor/MarkDownEditor";
-import ExcelPage from "../pages/Excel/Excel";
+import Home from "pages/Home/Home";
+import Charts from "pages/Charts/Charts";
+import List from "pages/List/List";
+import NotFound from "pages/NotFound/NotFound";
+import NotAllow from "pages/NotAllow/NotAllow";
+import Add from "pages/Add/Add";
+import UserManagement from "pages/User-Management/UserManagement";
+import RichTextEditor from "pages/RichTextEditor/RichTextEditor";
+import MarkdownEditor from "pages/MarkDownEditor/MarkDownEditor";
+import ExcelPage from "pages/Excel/Excel";
 
 export const Routes = [
   {

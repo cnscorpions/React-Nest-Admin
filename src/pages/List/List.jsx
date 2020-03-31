@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import EbookTable from "../../components/list/Table";
-import { getFileList, deleteFile } from "../../api/index";
+import EbookTable from "components/list/Table";
+import { getFileList, deleteFile } from "api/index";
 // import msgService from "../../components/message/message";
 
 class List extends Component {

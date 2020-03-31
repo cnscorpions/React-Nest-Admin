@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 import { Select, Button } from "antd";
-import useFetch from "../../utils/useFetch";
-import { getAllTableList } from "../../api/index";
-import { service } from "../../utils/request";
+import useFetch from "utils/useFetch";
+import { getAllTableList } from "api/index";
+import { service } from "utils/request";
 import { getUrl } from "./constants";
 
 import * as styles from "./exportCSV.module.scss";

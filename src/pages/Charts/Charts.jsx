@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { LineChart } from "../../components/charts/Chart";
-import { BarChart } from "../../components/charts/Bar";
-import { PieChart } from "../../components/charts/Pie";
+import { LineChart } from "components/charts/Chart";
+import { BarChart } from "components/charts/Bar";
+import { PieChart } from "components/charts/Pie";
 
 const Charts = () => {
   let location = useLocation();
