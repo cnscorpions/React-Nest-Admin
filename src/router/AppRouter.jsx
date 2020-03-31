@@ -6,10 +6,32 @@ import PrivateRoute from "./RouteGuard";
 import { Menu, Icon } from "antd";
 import AppLayout from "components/layout/AppLayout";
 
-import Login from "pages/Login/Login";
-import Signup from "pages/Signup/Signup";
-import ResetPwd from "pages/ResetPwd/ResetPwd";
-import NotFound from "pages/NotFound/NotFound";
+import Loadable from "react-loadable";
+import Loading from "./Loading";
+
+const Login = Loadable({
+  loader: () => import("pages/Login/Login"),
+  loading: Loading,
+  delay: 300
+});
+
+const Signup = Loadable({
+  loader: () => import("pages/Signup/Signup"),
+  loading: Loading,
+  delay: 300
+});
+
+const ResetPwd = Loadable({
+  loader: () => import("pages/ResetPwd/ResetPwd"),
+  loading: Loading,
+  delay: 300
+});
+
+const NotFound = Loadable({
+  loader: () => import("pages/NotFound/NotFound"),
+  loading: Loading,
+  delay: 300
+});
 
 const { SubMenu } = Menu;
 

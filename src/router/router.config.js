@@ -1,15 +1,68 @@
 // eslint-disable-next-line
+import React from "react";
+// eslint-disable-next-line
 import { Link } from "react-router-dom";
-import Home from "pages/Home/Home";
-import Charts from "pages/Charts/Charts";
-import List from "pages/List/List";
-import NotFound from "pages/NotFound/NotFound";
-import NotAllow from "pages/NotAllow/NotAllow";
-import Add from "pages/Add/Add";
-import UserManagement from "pages/User-Management/UserManagement";
-import RichTextEditor from "pages/RichTextEditor/RichTextEditor";
-import MarkdownEditor from "pages/MarkDownEditor/MarkDownEditor";
-import ExcelPage from "pages/Excel/Excel";
+import Loadable from "react-loadable";
+import Loading from "./Loading";
+
+const Home = Loadable({
+  loader: () => import("pages/Home/Home"),
+  loading: Loading,
+  delay: 300
+});
+const Charts = Loadable({
+  loader: () => import("pages/Charts/Charts"),
+  loading: Loading,
+  delay: 300
+});
+
+const List = Loadable({
+  loader: () => import("pages/List/List"),
+  loading: Loading,
+  delay: 300
+});
+
+const NotFound = Loadable({
+  loader: () => import("pages/NotFound/NotFound"),
+  loading: Loading,
+  delay: 300
+});
+
+const NotAllow = Loadable({
+  loader: () => import("pages/NotAllow/NotAllow"),
+  loading: Loading,
+  delay: 300
+});
+
+const Add = Loadable({
+  loader: () => import("pages/Add/Add"),
+  loading: Loading,
+  delay: 300
+});
+
+const UserManagement = Loadable({
+  loader: () => import("pages/User-Management/UserManagement"),
+  loading: Loading,
+  delay: 300
+});
+
+const RichTextEditor = Loadable({
+  loader: () => import("pages/RichTextEditor/RichTextEditor"),
+  loading: Loading,
+  delay: 300
+});
+
+const MarkdownEditor = Loadable({
+  loader: () => import("pages/MarkDownEditor/MarkDownEditor"),
+  loading: Loading,
+  delay: 300
+});
+
+const ExcelPage = Loadable({
+  loader: () => import("pages/Excel/Excel"),
+  loading: Loading,
+  delay: 300
+});
 
 export const Routes = [
   {
