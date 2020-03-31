@@ -1,23 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { Routes } from "./router.config";
 import PrivateRoute from "./RouteGuard";
 import { Menu, Icon } from "antd";
 import AppLayout from "../components/layout/AppLayout";
 
-import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import ResetPwd from "../pages/ResetPwd/ResetPwd";
-import Charts from "../pages/Charts/Charts";
-import List from "../pages/List/List";
 import NotFound from "../pages/NotFound/NotFound";
-import NotAllow from "../pages/NotAllow/NotAllow";
-import Add from "../pages/Add/Add";
-import UserManagement from "../pages/User-Management/UserManagement";
-import RichTextEditor from "../pages/RichTextEditor/RichTextEditor";
-import MarkdownEditor from "../pages/MarkDownEditor/MarkDownEditor";
-import ExcelPage from "../pages/Excel/Excel";
 
 const { SubMenu } = Menu;
 
@@ -26,8 +18,8 @@ const sidebar = lastPath => {
     <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
       <Menu.Item key="1">
         <Link to={{ pathname: "/" }}>
-          <Icon type="dashboard" />
-          <span>Dashboard</span>
+          <Icon type="home" />
+          <span>首页</span>
         </Link>
       </Menu.Item>
       <Menu.Item key="5">
@@ -163,70 +155,6 @@ const sidebar = lastPath => {
     </Menu>
   );
 };
-
-// define route configuration except login, 404
-const Routes = [
-  {
-    path: "/",
-    component: Home,
-    isAuthenticated: true, // authed
-    roles: ["admin", "user"] // root, user两种角色
-  },
-  {
-    path: "/file/list",
-    component: List,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/file/add",
-    component: Add,
-    isAuthenticated: true,
-    roles: ["admin"]
-  },
-  {
-    path: "/charts/:type",
-    component: Charts,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/not-found",
-    component: NotFound,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/not-allow",
-    component: NotAllow,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/user-management",
-    component: UserManagement,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/rich-text-editor",
-    component: RichTextEditor,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/md-editor",
-    component: MarkdownEditor,
-    isAuthenticated: true,
-    roles: ["admin", "user"]
-  },
-  {
-    path: "/excel/:type",
-    component: ExcelPage,
-    isAuthenticated: true,
-    roles: ["admin"]
-  }
-];
 
 function AppRouter(props) {
   const { isAuth } = props;
