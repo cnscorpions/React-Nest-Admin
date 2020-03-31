@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as FileSaver from "file-saver";
-import * as XLSX from "xlsx";
+import * as XLSX from "xlsx/dist/xlsx.mini.min";
 import { Select, Button } from "antd";
 import useFetch from "utils/useFetch";
 import { getAllTableList } from "api/index";
