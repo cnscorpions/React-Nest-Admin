@@ -3,7 +3,10 @@ import { connect } from "react-redux";
 import * as actionCreators from "store/actionCreators/index";
 import { useHistory } from "react-router-dom";
 
-import { Layout, Menu, Icon, Dropdown, Avatar } from "antd";
+import { Icon as LegacyIcon } from "@ant-design/compatible";
+import { MoreOutlined, NotificationOutlined } from "@ant-design/icons";
+
+import { Layout, Menu, Dropdown, Avatar } from "antd";
 
 import styles from "./AppLayout.module.scss";
 
@@ -39,7 +42,7 @@ const AppLayout = props => {
       </Sider>
       <Layout>
         <Header className={styles.header}>
-          <Icon
+          <LegacyIcon
             className={styles["trigger"]}
             type={isCollapsed ? "menu-unfold" : "menu-fold"}
             onClick={() => toggle(isCollapsed)}
@@ -56,14 +59,14 @@ const AppLayout = props => {
               {username ? username[0] : ""}
             </Avatar>
             <span>
-              <Icon type="notification" />
+              <NotificationOutlined />
             </span>
             <span className={styles["icon-box"]}>
               <Dropdown
                 overlay={() => menu(signOut, history)}
                 placement="bottomCenter"
               >
-                <Icon className={styles.icon} type="more" />
+                <MoreOutlined className={styles.icon} />
               </Dropdown>
             </span>
           </div>

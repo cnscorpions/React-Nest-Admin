@@ -3,7 +3,29 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Routes } from "./router.config";
 import PrivateRoute from "./RouteGuard";
-import { Menu, Icon } from "antd";
+
+import {
+  BarChartOutlined,
+  BugOutlined,
+  DashboardOutlined,
+  EditOutlined,
+  ExportOutlined,
+  FileExcelOutlined,
+  FileMarkdownOutlined,
+  FileOutlined,
+  GithubOutlined,
+  HomeOutlined,
+  Html5Outlined,
+  InboxOutlined,
+  LineChartOutlined,
+  OrderedListOutlined,
+  PieChartOutlined,
+  StopOutlined,
+  UploadOutlined,
+  UserOutlined
+} from "@ant-design/icons";
+
+import { Menu } from "antd";
 import AppLayout from "components/layout/AppLayout";
 
 import Loadable from "react-loadable";
@@ -40,13 +62,13 @@ const sidebar = () => {
     <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
       <Menu.Item key="1">
         <Link to={{ pathname: "/" }}>
-          <Icon type="home" />
+          <HomeOutlined />
           <span>首页</span>
         </Link>
       </Menu.Item>
       <Menu.Item key="5">
         <Link to={{ pathname: "/user-management" }}>
-          <Icon type="user" />
+          <UserOutlined />
           <span>用户管理</span>
         </Link>
       </Menu.Item>
@@ -54,20 +76,20 @@ const sidebar = () => {
         key="sub1"
         title={
           <span>
-            <Icon type="file" />
+            <FileOutlined />
             <span>文件管理</span>
           </span>
         }
       >
         <Menu.Item key="sub1-1">
           <Link to={{ pathname: "/file/list" }}>
-            <Icon type="ordered-list" />
+            <OrderedListOutlined />
             <span>文件列表</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub1-2">
           <Link to={{ pathname: "/file/add" }}>
-            <Icon type="upload" />
+            <UploadOutlined />
             <span>文件上传</span>
           </Link>
         </Menu.Item>
@@ -76,26 +98,26 @@ const sidebar = () => {
         key="sub2"
         title={
           <span>
-            <Icon type="dashboard" />
+            <DashboardOutlined />
             <span>可视化图表</span>
           </span>
         }
       >
         <Menu.Item key="sub2-1">
           <Link to={{ pathname: "/charts/line-chart" }}>
-            <Icon type="line-chart" />
+            <LineChartOutlined />
             <span>折线图</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub2-2">
           <Link to={{ pathname: "/charts/bar-chart" }}>
-            <Icon type="bar-chart" />
+            <BarChartOutlined />
             <span>柱状图</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub2-3">
           <Link to={{ pathname: "/charts/pie-chart" }}>
-            <Icon type="pie-chart" />
+            <PieChartOutlined />
             <span>饼状图</span>
           </Link>
         </Menu.Item>
@@ -105,14 +127,14 @@ const sidebar = () => {
         key="sub5"
         title={
           <span>
-            <Icon type="file-excel" />
+            <FileExcelOutlined />
             <span>Excel表格</span>
           </span>
         }
       >
         <Menu.Item key="sub5-1">
           <Link to={{ pathname: "/excel/export-csv" }}>
-            <Icon type="export" />
+            <ExportOutlined />
             <span>Export csv</span>
           </Link>
         </Menu.Item>
@@ -122,20 +144,20 @@ const sidebar = () => {
         key="sub4"
         title={
           <span>
-            <Icon type="edit" />
+            <EditOutlined />
             <span>文本编辑器</span>
           </span>
         }
       >
         <Menu.Item key="sub4-1">
           <Link to={{ pathname: "/rich-text-editor" }}>
-            <Icon type="html5" />
+            <Html5Outlined />
             <span>富文本编辑器</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub4-2">
           <Link to={{ pathname: "/md-editor" }}>
-            <Icon type="file-markdown" />
+            <FileMarkdownOutlined />
             <span>Markdown编辑器</span>
           </Link>
         </Menu.Item>
@@ -145,20 +167,20 @@ const sidebar = () => {
         key="sub3"
         title={
           <span>
-            <Icon type="bug" />
+            <BugOutlined />
             <span>错误页面</span>
           </span>
         }
       >
         <Menu.Item key="sub3-1">
           <Link to={{ pathname: "/not-found" }}>
-            <Icon type="inbox" />
+            <InboxOutlined />
             <span>404</span>
           </Link>
         </Menu.Item>
         <Menu.Item key="sub3-2">
           <Link to={{ pathname: "/not-allow" }}>
-            <Icon type="stop" />
+            <StopOutlined />
             <span>403</span>
           </Link>
         </Menu.Item>
@@ -170,7 +192,7 @@ const sidebar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon type="github" />
+          <GithubOutlined />
           <span>Github</span>
         </a>
       </Menu.Item>

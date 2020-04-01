@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Form, Icon, Input, Button } from "antd";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Form } from "@ant-design/compatible";
+import "@ant-design/compatible/assets/index.css";
+import { Input, Button } from "antd";
 import { resetPwd } from "api/index";
 import msgService from "../message/message";
 import * as styles from "./reset-pwd-form.module.scss";
@@ -42,7 +45,7 @@ class ResetPwdForm extends Component {
             rules: [{ required: true, message: "请输入用户名！" }]
           })(
             <Input
-              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="帐号"
               autoComplete="on"
             />
@@ -53,7 +56,7 @@ class ResetPwdForm extends Component {
             rules: [{ required: true, message: "请输入原密码！" }]
           })(
             <Input
-              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
               placeholder="原密码"
               autoComplete="on"
@@ -65,7 +68,7 @@ class ResetPwdForm extends Component {
             rules: [{ required: true, message: "请输入新密码！" }]
           })(
             <Input
-              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
               placeholder="新密码"
               autoComplete="on"

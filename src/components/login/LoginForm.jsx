@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Form, Icon, Input, Button } from "antd";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Form } from "@ant-design/compatible";
+import "@ant-design/compatible/assets/index.css";
+import { Input, Button } from "antd";
 import * as styles from "./LoginForm.module.scss";
 
 class LoginForm extends Component {
@@ -32,7 +35,7 @@ class LoginForm extends Component {
             rules: [{ required: true, message: "请输入用户名！" }]
           })(
             <Input
-              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="帐号"
               autoComplete="on"
             />
@@ -43,7 +46,7 @@ class LoginForm extends Component {
             rules: [{ required: true, message: "请输入密码！" }]
           })(
             <Input
-              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
               placeholder="密码"
               autoComplete="on"

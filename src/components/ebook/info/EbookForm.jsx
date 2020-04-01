@@ -1,5 +1,7 @@
 import React from "react";
-import { Form, Input, Button } from "antd";
+import { Form } from "@ant-design/compatible";
+import "@ant-design/compatible/assets/index.css";
+import { Input, Button } from "antd";
 import * as styles from "./ebookForm.module.scss";
 
 const items = [

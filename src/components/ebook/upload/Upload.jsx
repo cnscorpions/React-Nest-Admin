@@ -1,7 +1,8 @@
 import React from "react";
 import { getUser } from "utils/storage";
 import { uploadFile } from "api/index";
-import { Upload, message, Icon } from "antd";
+import { InboxOutlined } from "@ant-design/icons";
+import { Upload, message } from "antd";
 
 const { Dragger } = Upload;
 
@@ -34,7 +35,7 @@ function UploadEbook() {
     <div style={{ height: "240px" }}>
       <Dragger {...props}>
         <p className="ant-upload-drag-icon">
-          <Icon type="inbox" />
+          <InboxOutlined />
         </p>
         <p className="ant-upload-text">点击或拖拽上传</p>
       </Dragger>

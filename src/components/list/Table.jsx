@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Table, Icon, Tag, Pagination } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
+import { Table, Tag, Pagination } from "antd";
 import { numberToTime, kbToMb } from "utils/pipes";
 
 const { Column } = Table;
@@ -57,8 +58,7 @@ export class EbookTable extends Component {
             key="action"
             render={record => (
               <span>
-                <Icon
-                  type="delete"
+                <DeleteOutlined
                   onClick={() =>
                     this.deleteHanler(record["_id"], record["filePath"])
                   }
