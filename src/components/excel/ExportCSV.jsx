@@ -52,7 +52,6 @@ export const ExportCSV = () => {
           : null}
       </Select>
       <Button
-        className={styles["export-btn"]}
         style={{ marginLeft: "20px" }}
         type="primary"
         disabled={selectedItem ? false : true}

@@ -31,10 +31,6 @@ const resetPwd = (username, oldPwd, newPwd) => {
   });
 };
 
-const getProfile = () => {
-  return service.get(`${host}/profile`);
-};
-
 const uploadFile = data => {
   return uploadService.post(`${host}/file/upload`, data);
 };
