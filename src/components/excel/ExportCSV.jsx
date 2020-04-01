@@ -7,8 +7,6 @@ import { getAllTableList } from "api/index";
 import { service } from "utils/request";
 import { getUrl } from "./constants";
 
-import * as styles from "./exportCSV.module.scss";
-
 const { Option } = Select;
 
 const saveTableToCSV = async (type, fileName) => {
@@ -55,6 +53,7 @@ export const ExportCSV = () => {
       </Select>
       <Button
         className={styles["export-btn"]}
+        style={{ marginLeft: "20px" }}
         type="primary"
         disabled={selectedItem ? false : true}
         onClick={() => saveTableToCSV(selectedItem, selectedItem)}
