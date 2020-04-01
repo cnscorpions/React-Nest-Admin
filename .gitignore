@@ -109,6 +109,4 @@ tmp/
 temp/
 
 # End of https://www.gitignore.io/api/node
-doc/
-doc/images
 build/
