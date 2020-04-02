@@ -266,6 +266,8 @@ Dynamic Routing 意味着 Router 作为组件存在，在 rendering 过程中生
 
 ## 应用上线流程图
 
+![应用上线流程图](./images/应用上线流程图.png)
+
 ## 参考文档
 
 1. [Nest 官方文档](https://docs.nestjs.com/)
