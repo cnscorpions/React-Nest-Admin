@@ -59,13 +59,37 @@
 
 ## 功能及技术实现
 
-- 登录 & 注册 - [x] 登录 - [x] 注册 - [x] 重置密码
-- 用户鉴权 - [x] Bcrypt + Salt + JWT 鉴权 - [x] Role-Based 权限管理
-- 状态管理 - [x] React-Redux - [x] Redux-DevTools 开发调试 - [x] Redux-Thunk dispatch 异步 Action - [x] Redux-persist（状态可持久化）
-- 网络请求 - [x] axios 拦截请求，注入 token - [x] 后台 filter 自定义全局 HTTP 异常捕获 - [x] 后台请求响应拦截，统一放回格式 - [x] 后台 auth guard - [x] 后台 role guard
-- 文件上传 - [x] 上传 - [x] 列表查询 - [x] 删除
-- 计划中 - [x] 帐号密码 MD5+salt 加密
-  - [x] 前端使用绝对路径引入 - [ ] token 失效弹窗提示 - [ ] refresh token - [ ] 写 unit test - [ ] 配置 travis 初步实现 CI - [ ] Docker 容器化 - [ ] i18n
+- 登录 & 注册
+- [x] 登录
+- [x] 注册 
+- [x] 重置密码
+- 用户鉴权
+- [x] Bcrypt + Salt + JWT 鉴权
+- [x] Role-Based 权限管理
+- 状态管理 
+- [x] React-Redux
+- [x] Redux-DevTools 开发调试
+- [x] Redux-Thunk dispatch 异步 Action
+- [x] Redux-persist（状态可持久化）
+- 网络请求
+- [x] axios 拦截请求，注入 token
+- [x] 后台 filter 自定义全局 HTTP 异常捕获 
+- [x] 后台请求响应拦截，统一放回格式 
+- [x] 后台 auth guard
+- [x] 后台 role guard
+- 文件上传
+- [x] 上传
+- [x] 列表查询
+- [x] 删除
+- 计划中
+- [x] 帐号密码 MD5+salt 加密
+- [x] 前端使用绝对路径引入
+- [ ] token 失效弹窗提示
+- [ ] refresh token
+- [ ] 写 unit test
+- [ ] 配置 travis 初步实现 CI
+- [ ] Docker 容器化
+- [ ] i18n
 
 ## 开发
 
