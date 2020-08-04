@@ -33,14 +33,14 @@ function Login(props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles["login-box"]}>
-        <h3 className={styles.title}>通用管理后台</h3>
+        <h3 className={styles.title}>管理后台</h3>
         <LoginForm
           submitToParent={login}
           goSignup={goSignup}
           goResetPwd={goResetPwd}
         />
       </div>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: "0px",
@@ -53,7 +53,7 @@ function Login(props) {
         }}
       >
         鄂ICP备19026512号-3
-      </div>
+      </div> */}
     </div>
   );
 }

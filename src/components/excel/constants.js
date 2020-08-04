@@ -1,7 +1,7 @@
 const host =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:23000"
-    : "https://react-nestjs-admin.xyz";
+    : "https://admin.ligouhai.cn";
 
 const LOOKUP_USERS = "users";
 const LOOKUP_FILES = "files";

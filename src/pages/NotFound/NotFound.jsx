@@ -19,7 +19,7 @@ function NotFound(props) {
           </a>
         </div>
       </div>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: "0px",
@@ -32,7 +32,7 @@ function NotFound(props) {
         }}
       >
         鄂ICP备19026512号-3
-      </div>
+      </div> */}
     </div>
   );
 }

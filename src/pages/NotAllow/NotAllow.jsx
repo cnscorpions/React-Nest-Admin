@@ -9,7 +9,7 @@ function NotAllow(props) {
   return (
     <div className={styles["wrapper"]}>
       <h3>角色{roles}无权访问</h3>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: "0px",
@@ -22,7 +22,7 @@ function NotAllow(props) {
         }}
       >
         鄂ICP备19026512号-3
-      </div>
+      </div> */}
     </div>
   );
 }
