@@ -22,8 +22,6 @@
 2. 这是一个 Admin 前后端解决方案，涉及 JWT 鉴权，基于角色权限管理;
 3. 这是一套 Web 项目的完整学习资料，涉及到相关知识会提供 Roadmap 和 tips
 
-- [在线版本](https://react-nestjs-admin.xyz) 账号密码：`admin 123` or `morty 123`
-
 ## 系列教程：
 
 1.  [手把手撸一个前后端分离 Admin 系统 - 由用户登录而来的 JWT 鉴权以及权限管理](./doc/手把手撸一个前后端分离Admin系统/01-由用户登录而来的JWT鉴权以及权限管理.md)
