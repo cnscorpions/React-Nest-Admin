@@ -17,7 +17,7 @@ function Signup(props) {
         <h3 className={styles.title}>用户注册</h3>
         <SignupForm submitToParent={goLogin} />
       </div>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: "0px",
@@ -30,7 +30,7 @@ function Signup(props) {
         }}
       >
         鄂ICP备19026512号-3
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { service, uploadService } from "utils/request";
 const host =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:23000"
-    : "https://react-nestjs-admin.xyz";
+    : "https://admin.ligouhai.cn";
 
 // ajax req for login to get token
 const checkAuth = (username, password) => {
@@ -51,7 +51,7 @@ export {
   checkAuth,
   registerUser,
   resetPwd,
-  getProfile,
+  // getProfile,
   uploadFile,
   getFileList,
   deleteFile,

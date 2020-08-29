@@ -83,7 +83,7 @@ const AppLayout = props => {
           {props.content}
         </Content>
       </Layout>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: "0px",
@@ -96,7 +96,7 @@ const AppLayout = props => {
         }}
       >
         鄂ICP备19026512号-3
-      </div>
+      </div> */}
     </Layout>
   );
 };
