@@ -10,6 +10,7 @@ const Home = Loadable({
   loading: Loading,
   delay: 300
 });
+
 const Charts = Loadable({
   loader: () => import("pages/Charts/Charts"),
   loading: Loading,
